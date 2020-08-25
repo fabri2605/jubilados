@@ -215,6 +215,7 @@
     <script src="/js/popper.min.js" ></script>
     <script src="/js/bootstrap.min.js" ></script>
     <script src="/js/jquery-confirm.min.js"></script>
+    <script src="/sitio/assets/js/input.js"></script>
     <script src="/js/messages.js"></script> 
     <script src="/js/admin.js" ></script>
     <script src="/js/app.init.js" ></script>

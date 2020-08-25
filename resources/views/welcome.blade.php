@@ -183,7 +183,7 @@
 	</div>
 	<script src="sitio/assets/js/jquery-3.3.1.min.js"></script>
 	<script src="sitio/assets/js/jquery.validate.min.js"></script>
-	<script src="https://rawgit.com/RobinHerbots/jquery.inputmask/3.x/dist/jquery.inputmask.bundle.js"></script>
+	<script src="sitio/assets/js/input.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="sitio/assets/js/bootstrap.min.js"></script>
 	<script src="js/jquery-confirm.min.js"></script>
