@@ -21,8 +21,8 @@ class SitioController extends Controller
     public function validarAbono(Request $request){
         $response = array();
 
-        $data = explode('-',$request->get('documento'));
-        $abono = Abono::where('dni','=',$data[1])->first();
+        $data = $request->get('documento');
+        $abono = Abono::where('dni','=',$data)->first();
         if(!empty($abono)){
             $response['status'] = 'success';
             $response['abono'] =  $abono;

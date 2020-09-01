@@ -202,7 +202,7 @@
 		_validate = null;
         $(document).ready(function(){
             $(":input").inputmask();_validate = null;
-			$("#cuit" ).focusout(function() {	
+			$("#dni" ).focusout(function() {	
 				let val = $(this).val();
 				if(val != _validate){
 					_validate = val;
