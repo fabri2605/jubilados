@@ -52,6 +52,8 @@
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
 									<span class="step-no">PASO 1</span>
+									<h3>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811, solicite su Tarjeta SUBE completando el siguiente formulario.
+										Su Tarjeta SUBE sera enviada a su domicilio.</h3>
 									<h2>Ingrese el número de trámite de su documento nacional de identidad</h2>
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
                                 
