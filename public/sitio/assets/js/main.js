@@ -272,11 +272,17 @@ $(function() {
         }else if(activePanelNum == 0){*/
         // }   
 
-        let tramite, apellido,nombre,cuit,celular,fijo,email,fecha_nacimiento,sexo;
+        let tramite, apellido,nombre,cuit,celular,fijo,email,fecha_nacimiento,sexo,documento;
         
         if(activePanelNum == 0){
             tramite = $('#nro_tramite').val();
-            if(!tramite){
+            documento = $('#dni').val();
+            if(!documento){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'Debe ingresar el número de documento!',
+                });
+            }else if(!tramite){
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Debe ingresar el número de trámite!',
