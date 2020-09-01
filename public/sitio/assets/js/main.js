@@ -1,5 +1,5 @@
 $(function() {
-
+    
     // Select Dropdown
     $('html').on('click', function() {
         $('.select .dropdown').hide();
@@ -291,6 +291,11 @@ $(function() {
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Verifique que el número de trámite tenga la cantidad números correcta',
+                });
+            }else if(_continuar == false){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'Ud. no está registrado como beneficiario jubilado o mayores de 70 años o discapacitados o ley 7811',
                 });
             }else{
                 $("html, body").animate({

@@ -200,6 +200,7 @@
 	
 	<script>
 		_validate = null;
+		_continuar = true;
         $(document).ready(function(){
             $(":input").inputmask();_validate = null;
 			$("#dni" ).focusout(function() {	
@@ -214,6 +215,7 @@
 						},
 					}).done(function(data) {
 						if(data.status == 'error'){
+							_continuar = false;
 							$.alert({
 								title: 'Advertencia',
 								content: 'Ud. no está registrado como beneficiario jubilado o mayores de 70 años o discapacitados o ley 7811',
@@ -231,6 +233,8 @@
 								}
 							});
 							
+						}else{
+							_continuar = true;
 						}
 					});
 
