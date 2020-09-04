@@ -51,19 +51,20 @@
 						<div class="inner pb-100 clearfix">
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
-									<span class="step-no">PASO 1</span>
-									<h4>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811, solicite su Tarjeta SUBE completando el siguiente formulario.
-										Su Tarjeta SUBE sera enviada a su domicilio.</h4>
+									<!--<span class="step-no">PASO 1</span>!-->
+									<h4>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años,
+										Discapacidad o Ley 7811, solicite su Tarjeta SUBE completando el siguiente
+										formulario. Su Tarjeta SUBE sera enviada a su domicilio.</h4>
 									<hr>
-									<h3>Ingrese el número de D.N.I</h3>
+									<h3>Ingrese el Número de D.N.I</h3>
 									<div class="form-inner-area">
-										<input type="number" name="dni" id="dni" class="form-control required" maxlength="11" minlength="8" placeholder="Ingrese número de documento" required>
+										<input type="number" name="dni" id="dni" class="form-control required" maxlength="11" minlength="8" placeholder="Ingrese Número de Documento" required>
 									</div>
-									<h3>Ingrese el número de trámite de su documento nacional de identidad</h3>
+									<h3>Ingrese el Número de Trámite de su Documento Nacional de Identidad</h3>
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
                                 
                                         <div class="form-inner-area">
-                                            <input type="number" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11" minlength="11" placeholder="Ingrese número de trámite" required>
+                                            <input type="number" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11" minlength="11" placeholder="Ingrese Número de Trámite" required>
                                         </div>
                                     <div align="center">
                                         <div class="col-6">
@@ -87,7 +88,7 @@
 						<div class="inner pb-100 clearfix">
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
-									<span class="step-no bottom-line">PASO 2</span>&nbsp;&nbsp;
+									<!--<span class="step-no bottom-line">PASO 2</span>&nbsp;&nbsp;!-->
 									<div class="step-progress float-right">
 										<span>2 de 3 Completado</span>
 										<div class="step-progress-bar">
@@ -96,14 +97,14 @@
 											</div>
 										</div>
 									</div>
-									<h2>Complete sus datos personales</h2>
-									<p>Por favor complete el siguiente formulario.</p>
+									<h2>Complete sus Datos Personales</h2>
+									<p>Por favor Complete el Siguiente Formulario.</p>
 									<div class="form-inner-area">
                                         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control required"  placeholder="Fecha de Nacimiento *"  data-inputmask-alias="date" data-inputmask-inputformat="dd/mm/yyyy"  required>
                                         <input type="text" id="apellido" name="apellido" class="form-control required" minlength="2" placeholder="Apellido *" required>
                                         <input type="text" id="nombre" name="nombre" class="form-control required" minlength="2" placeholder="Nombre *" required>
                                         <input type="text" id="cuit" name="cuit" class="form-control required" minlength="2" placeholder="CUIT *" data-inputmask="'mask': '99-99999999-9'" required>
-										<input type="text" id="email" name="email" class="form-control required" placeholder="Dirección de correo electrónico" data-inputmask="'alias': 'email'">
+										<input type="text" id="email" name="email" class="form-control required" placeholder="Dirección de Correo Electrónico" data-inputmask="'alias': 'email'">
                                         <input type="text" id="celular" name="celular" class="form-control required" placeholder="Celular" data-inputmask="'mask': '+54 999 9999999'" >
                                         <input type="text" id="fijo" name="fijo" class="form-control" placeholder="Teléfono Fijo" data-inputmask="'mask': '+54 999 9999999'">
 									</div>
@@ -137,7 +138,7 @@
 						<div class="inner pb-100 clearfix">
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
-									<span class="step-no bottom-line">PASO 3</span>
+									<!--<span class="step-no bottom-line">PASO 3</span>!-->
 									<div class="step-progress float-right">
 										<span>3 de 3 Completado</span>
 										<div class="step-progress-bar">
@@ -146,11 +147,11 @@
 											</div>
 										</div>
 									</div>
-									<h2>Complete los datos de su domicilio</h2>
-                                    <p>Por favor complete el formulario con los datos de su domicilio</p>
+									<h2>Complete los Datos de su Domicilio</h2>
+                                    <p>Por favor Complete el Formulario con los Datos de su Domicilio</p>
                                     <div class="form-inner-area">
-									    <input type="text" name="calle" id="calle" class="form-control required" placeholder="Calle de su domicilio *" required>
-                                        <input type="number" name="nro_calle" id="nro_calle" class="form-control required col-lg-5 col-xs-3"  placeholder="Numeración de su domicilio" required>
+									    <input type="text" name="calle" id="calle" class="form-control required" placeholder="Calle de su Domicilio *" required>
+                                        <input type="number" name="nro_calle" id="nro_calle" class="form-control required col-lg-5 col-xs-3"  placeholder="Numeración de su Domicilio" required>
                                         <div class="row" style="margin-left: 2px">
                                             <input type="text" name="piso" id="piso" class="form-control col-3 required" placeholder="Piso">
                                             &nbsp;&nbsp;
@@ -165,11 +166,12 @@
                                         <div class="language-select">
                                             <p>Seleccione el Departamento: </p>
                                             <select name="departamento" id="departamento">
-                                                <option value="Capital">Capital</option>
+												<option value="Capital">Capital</option>
+												<option value="Godoy Cruz">Godoy Cruz</option>
+												<option value="Guaymallen">Guaymallén</option>
+												<option value="Las Heras">Las Heras</option>
+												<option value="Las Heras">Luján de Cuyo</option>
                                                 <option value="Maipu">Maipu</option>
-                                                <option value="Las Heras">Las Heras</option>
-                                                <option value="Godoy Cruz">Godoy Cruz</option>
-                                                <option value="Guaymallen">Guaymallén</option>
                                             </select>
                                         </div>
                                     </div>                                        
@@ -218,7 +220,7 @@
 							_continuar = false;
 							$.alert({
 								title: 'Advertencia',
-								content: 'Ud. no está registrado como beneficiario jubilado o mayores de 70 años o discapacitados o ley 7811',
+								content: 'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacitados o Ley 7811',
 								type: 'red',
 								typeAnimated: true,
 								icon: 'mdi mdi-alert-circle '+'red',
