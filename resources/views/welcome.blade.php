@@ -27,7 +27,7 @@
 	<div class="wrapper">
 		<div class="steps-area steps-area-fixed">
 			<div class="image-holder">
-				<img src="sitio/assets/img/side-img.jpg" alt="">
+				<img src="sitio/assets/img/side-img.png" alt="">
 			</div>
 			<div class="steps clearfix">
 				<ul class="tablist multisteps-form__progress">
