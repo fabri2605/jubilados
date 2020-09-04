@@ -37,6 +37,8 @@ class SitioController extends Controller
         $validar = Solicitud::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
         if(empty($validar)){
             $data = explode('-',$request->get('cuit'));
+
+            return  $request;
             $abono = Abono::where('dni','=',$data[1])->first();
 
             $format = 'd/m/Y';
