@@ -41,8 +41,8 @@ class SitioController extends Controller
             
             $abono = Abono::where('dni','=',$request->get('dni'))->first();
 
-            return  $abono;
-            
+            //return  $abono;
+
             $format = 'd/m/Y';
             $date = Carbon::createFromFormat($format, $request->get('fecha_nacimiento'));
 
