@@ -39,7 +39,7 @@ class SitioController extends Controller
             $data = explode('-',$request->get('cuit'));
 
             return  $request;
-            $abono = Abono::where('dni','=',$data[1])->first();
+            $abono = Abono::where('dni','=',$request->get('dni'))->first();
 
             $format = 'd/m/Y';
             $date = Carbon::createFromFormat($format, $request->get('fecha_nacimiento'));
