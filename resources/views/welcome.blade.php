@@ -19,6 +19,11 @@
 	<link href="sitio/assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
 
 	<link rel="stylesheet" href="/css/jquery-confirm.min.css">
+	<style>
+		.capital{
+			text-transform: capitalize;
+		}
+	</style>
 </head>
 
 <body>
@@ -101,8 +106,8 @@
 									<p>Por favor Complete el Siguiente Formulario.</p>
 									<div class="form-inner-area">
                                         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control required"  placeholder="Fecha de Nacimiento *"  data-inputmask-alias="date" data-inputmask-inputformat="dd/mm/yyyy"  required>
-                                        <input type="text" id="apellido" name="apellido" class="form-control required" minlength="2" placeholder="Apellido *" required>
-                                        <input type="text" id="nombre" name="nombre" class="form-control required" minlength="2" placeholder="Nombre *" required>
+                                        <input type="text" id="apellido" name="apellido" class="form-control required capital" minlength="2" placeholder="Apellido *" required>
+                                        <input type="text" id="nombre" name="nombre" class="form-control required capital" minlength="2" placeholder="Nombre *" required>
                                         <input type="text" id="cuit" name="cuit" class="form-control required" minlength="2" placeholder="CUIT *" data-inputmask="'mask': '99-99999999-9'" required>
 										<input type="text" id="email" name="email" class="form-control required" placeholder="Dirección de Correo Electrónico" data-inputmask="'alias': 'email'">
                                         <input type="text" id="celular" name="celular" class="form-control required" placeholder="Celular" data-inputmask="'mask': '+54 999 9999999'" >
@@ -148,9 +153,9 @@
 										</div>
 									</div>
 									<h2>Complete los Datos de su Domicilio</h2>
-                                    <p>Por favor Complete el Formulario con los Datos de su Domicilio</p>
+                                    <p>Por favor Complete el Formulario con los Datos de su Domicilio donde recibirá la tarjeta</p>
                                     <div class="form-inner-area">
-									    <input type="text" name="calle" id="calle" class="form-control required" placeholder="Calle de su Domicilio *" required>
+									    <input type="text" name="calle" id="calle" class="form-control required capital" placeholder="Calle de su Domicilio *" required>
                                         <input type="number" name="nro_calle" id="nro_calle" class="form-control required col-lg-5 col-xs-3"  placeholder="Numeración de su Domicilio" required>
                                         <div class="row" style="margin-left: 2px">
                                             <input type="text" name="piso" id="piso" class="form-control col-3 required" placeholder="Piso">
@@ -162,7 +167,7 @@
                                             &nbsp;&nbsp;
                                             <input type="text" name="casa" id="casa" class="form-control col-3 required" placeholder="Casa">
                                         </div>
-                                        <input type="text" name="localidad" id="localidad" class="form-control required" placeholder="Localidad *" required>
+                                        <input type="text" name="localidad" id="localidad" class="form-control required capital" placeholder="Localidad *" required>
                                         <div class="language-select">
                                             <p>Seleccione el Departamento: </p>
                                             <select name="departamento" id="departamento">
@@ -207,7 +212,7 @@
             $(":input").inputmask();_validate = null;
 			$("#dni" ).focusout(function() {	
 				let val = $(this).val();
-				if(val != _validate){
+				if((val != _validate) && val){
 					_validate = val;
 					$.ajax({
 						url: "/sitio/validar/abono/",
@@ -229,6 +234,7 @@
 										text: 'Aceptar',
 										btnClass: 'btn-'+'red',
 										close: function(){
+											$('#dni').focus();
 										}
 									},
 								
