@@ -223,6 +223,7 @@
 					}).done(function(data) {
 						if(data.status == 'error'){
 							_continuar = false;
+							document.getElementById("dni").focus();
 							$.alert({
 								title: 'Advertencia',
 								content: 'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacitados o Ley 7811',
@@ -234,7 +235,7 @@
 										text: 'Aceptar',
 										btnClass: 'btn-'+'red',
 										close: function(){
-											$('#dni').focus();
+											
 										}
 									},
 								
