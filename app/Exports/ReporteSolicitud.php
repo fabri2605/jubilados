@@ -55,7 +55,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
                         ->whereDate('created_at', '<=', $this->fecha_hasta->toDateString())
                         ->whereDate('created_at', '>=', $this->fecha_desde->toDateString())->get();
 
-
+        dd($solicitudes);
         $response = array();
         foreach($solicitudes as $item){
             $datos =   [
