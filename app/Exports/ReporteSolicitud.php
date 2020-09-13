@@ -51,8 +51,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
     }
     public function collection()
     {
-        $solicitudes = Solicitud::with('solicituds')
-                        ->whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
+        $solicitudes = Solicitud::whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
                         ->whereDate('fecha_solicitud', '>=', $this->fecha_desde->toDateString())->get();
 
         //dd($solicitudes);
