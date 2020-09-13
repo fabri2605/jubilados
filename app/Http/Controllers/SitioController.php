@@ -38,12 +38,7 @@ class SitioController extends Controller
         $validar = Solicitud::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
         if(empty($validar)){
             $data = explode('-',$request->get('cuit'));
-
-            
             $abono = Abono::where('dni','=',$request->get('dni'))->first();
-
-            //return  $abono;
-
             $format = 'd/m/Y';
             $date = Carbon::createFromFormat($format, $request->get('fecha_nacimiento'));
 
@@ -61,6 +56,8 @@ class SitioController extends Controller
 
             return redirect()->route('home')->with('message', 'Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
         }else{
+
+            alert()->success('Información','Ya se encuentra una solicitud pendiente con CUIL del solicitante');
 
             return redirect()->route('home')->withInput($request->all());
         }
