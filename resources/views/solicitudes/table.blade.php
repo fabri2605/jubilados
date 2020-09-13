@@ -10,6 +10,10 @@
             Nuevo
         </button>
         &nbsp;
+        <button type="button" class="btn btn-danger cblanco btn-sm col-lg-1 col-xs-7" data-toggle="modal" data-target="#reporteModal" >
+            <i class="ti-download"></i>
+            Reporte
+        </button>
     </div>
 </div>
 <br>
