@@ -59,7 +59,7 @@ class SitioController extends Controller
             
             alert()->success('Información','Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
 
-            return redirect()->route('home');
+            return redirect()->route('home')->with('message', 'Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
         }else{
 
             return redirect()->route('home')->withInput($request->all());
