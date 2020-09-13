@@ -57,6 +57,7 @@ class SolicitudController extends Controller
             $solicitud->fill($request->all());
             $solicitud->estado = 'SOLICITADO';
             $solicitud->fecha_nacimiento = $date;
+            $solicitud->fecha_solicitud = Carbon::now();
             $solicitud->save();
             $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
             $solicitud->update();

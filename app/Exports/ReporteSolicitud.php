@@ -52,16 +52,16 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
     public function collection()
     {
         $solicitudes = Solicitud::with('solicituds')
-                        ->whereDate('created_at', '<=', $this->fecha_hasta->toDateString())
-                        ->whereDate('created_at', '>=', $this->fecha_desde->toDateString())->get();
+                        ->whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
+                        ->whereDate('fecha_solicitud', '>=', $this->fecha_desde->toDateString())->get();
 
         dd($solicitudes);
         $response = array();
         foreach($solicitudes as $item){
             $datos =   [
                         'nro_solicitud' => $item->nro_solicitud,
-                        'fecha' => Carbon::parse($item->created_at)->format('d/m/y'), 
-                        'hora' => Carbon::parse($item->created_at)->format('H:i:s'),
+                        'fecha' => Carbon::parse($item->fecha_solicitud)->format('d/m/y'), 
+                        'hora' => Carbon::parse($item->fecha_solicitud)->format('H:i:s'),
                         'apellido' => $item->apellido,
                         'nombre' =>  $item->nombre,
                         'sexo' =>  $item->sexo,
