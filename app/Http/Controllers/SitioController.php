@@ -26,6 +26,7 @@ class SitioController extends Controller
         if(!empty($abono)){
             $response['status'] = 'success';
             $response['abono'] =  $abono;
+            $response['msg'] =  'Ústed esta solicitando el abono por "'.$abono->abono.'"';
         }else{
             $response['status'] = 'error';
             $response['msg'] =  'Registro no encontrado';

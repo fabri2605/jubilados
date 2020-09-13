@@ -362,6 +362,7 @@ $(function() {
             casa = $('#casa').val();
             localidad = $('#localidad').val();
             departamento = $('#departamento').val();
+            codigo_postal = $('#codigo_postal').val();
 
             if(!calle){
                 $.alert({
@@ -382,6 +383,11 @@ $(function() {
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Seleccione un departamento',
+                });
+            }else if(!codigo_postal){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'Ingrese su código postal de 4 dígitos',
                 });
             }else{
                 alert('finalizo');

@@ -33,5 +33,6 @@ class Solicitud extends Model
         'departamento',
         'observaciones',
         'estado',
+        'codigo_postal',
     ];
 }

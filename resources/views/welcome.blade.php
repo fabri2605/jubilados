@@ -75,7 +75,9 @@
                                         <div class="col-6">
                                             <img src="sitio/images/dni-tramite.png" class="img-fluid">
                                         </div>
-                                    </div>
+									</div>
+									
+									<h4 id="abono-soliciado"></h4>
 								</div>
 							</div>
 						</div>
@@ -178,7 +180,8 @@
 												<option value="Las Heras">Luján de Cuyo</option>
                                                 <option value="Maipu">Maipu</option>
                                             </select>
-                                        </div>
+										</div>
+										<input type="number" name="codigo_postal" id="codigo_postal" class="form-control required col-lg-5 col-xs-3"  placeholder="Ingrese su Código Postal" data-inputmask="'mask': '9999'" minlength="4" maxlength="4" required>
                                     </div>                                        
 								</div>
 							</div>
@@ -226,7 +229,7 @@
 							document.getElementById("dni").focus();
 							$.alert({
 								title: 'Advertencia',
-								content: 'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacitados o Ley 7811',
+								content: 'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacidad o Ley 7811.Para solicitar por primera vez su tarjeta, solicitarla a través de la App 148 Mendoza.',
 								type: 'red',
 								typeAnimated: true,
 								icon: 'mdi mdi-alert-circle '+'red',
@@ -243,6 +246,7 @@
 							});
 							
 						}else{
+							$('#abono-solicitado').text(response.msg);
 							_continuar = true;
 						}
 					});
