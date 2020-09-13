@@ -84,7 +84,7 @@
                 },
                 columns: [
                     {data: 'nro_solicitud', name: 'nro_solicitud'},
-                    {data: 'created_at', name: 'created_at'},
+                    {data: 'fecha_solicitud', name: 'fecha_solicitud'},
                     {data: 'cuit', name: 'cuit'},
                     {data: 'apellido', name: 'apellido'},
                     {data: 'nombre', name: 'nombre'},

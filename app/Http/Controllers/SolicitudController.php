@@ -32,8 +32,8 @@ class SolicitudController extends Controller
                         $btn = $btn.'</div>';
                         return $btn;
                 })
-                ->editColumn('created_at', function($row){
-                    return Carbon::parse($row->created_at)->format('d/m/Y');
+                ->editColumn('fecha_solicitud', function($row){
+                    return Carbon::parse($row->fecha_solicitud)->format('d/m/Y');
                 })
                 ->rawColumns(['action'])
                 ->toJson();
