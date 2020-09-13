@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col col-lg-4 col-xs-8">
                     <label for="nombrePila">Fecha Desde </label><br>
-                    <input id="df_consulta_reporte_desde" type="text">
+                    <input id="df_consulta_desde" type="text">
                 </div>
                 <div class="col col-lg-4 col-xs-8">
                     <label for="nombrePila">Fecha Hasta </label><br>
-                    <input id="df_consulta_reporte_hasta" type="text">
+                    <input id="df_consulta_hasta" type="text">
                 </div>
             </div>
             <br>
