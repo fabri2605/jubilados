@@ -246,7 +246,7 @@
 							});
 							
 						}else{
-							$('#abono-solicitado').text(response.msg);
+							$('#abono-solicitado').text(data.msg);
 							_continuar = true;
 						}
 					});
