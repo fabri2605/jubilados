@@ -28,12 +28,7 @@
 
 <body>
 	@include('sweetalert::alert')
-	@if(session()->has('message'))
-		<input id="mensaje" type="hidden" value="{{ session()->get('message') }}">
-		<div class="alert alert-success">
-			{{ session()->get('message') }}
-		</div>
-	@endif
+	
 	<div class="clearfix"></div>
 	<div class="wrapper">
 		<div class="steps-area steps-area-fixed">

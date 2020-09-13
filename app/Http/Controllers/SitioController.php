@@ -52,7 +52,7 @@ class SitioController extends Controller
             $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
             $solicitud->update();
             
-            alert()->success('Información','Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
+            alert()->success('Información','Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->nro_solicitud);
 
             return redirect()->route('home')->with('message', 'Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
         }else{
