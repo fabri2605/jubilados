@@ -53,7 +53,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
     {
         $solicitudes = Solicitud::with('solicituds')
                         ->whereDate('created_at', '<=', $this->fecha_hasta->toDateString())
-                        ->whereDate('created_at', '>=', $this->fecha_desde->toDateString());
+                        ->whereDate('created_at', '>=', $this->fecha_desde->toDateString())->get();
 
 
         $response = array();
