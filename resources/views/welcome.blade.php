@@ -70,7 +70,7 @@
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
                                 
                                         <div class="form-inner-area">
-                                            <input type="number" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11" minlength="11" placeholder="Ingrese Número de Trámite" required>
+                                            <input type="text" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11"  placeholder="Ingrese Número de Trámite" required>
                                         </div>
                                     <div align="center">
                                         <div class="col-6">
