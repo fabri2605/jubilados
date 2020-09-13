@@ -77,7 +77,7 @@
                                         </div>
 									</div>
 									
-									<h4 id="abono-soliciado"></h4>
+									<h4 id="abono-solicitado"></h4>
 								</div>
 							</div>
 						</div>
