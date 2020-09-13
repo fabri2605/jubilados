@@ -35,6 +35,9 @@ class SolicitudController extends Controller
                 ->editColumn('fecha_solicitud', function($row){
                     return Carbon::parse($row->fecha_solicitud)->format('d/m/Y');
                 })
+                ->editColumn('hora_solicitud', function($row){
+                    return Carbon::parse($row->hora_solicitud)->format('H:i:s');
+                })
                 ->rawColumns(['action'])
                 ->toJson();
         }
