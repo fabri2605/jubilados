@@ -19,7 +19,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
     public function __construct($fecha_desde, $fecha_hasta)
     {
         $this->fecha_desde = $fecha_desde; 
-        $this->fecha_hasta = $fecha_desde; 
+        $this->fecha_hasta = $fecha_hasta; 
     }
     public function headings(): array
     {
@@ -55,7 +55,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
                         ->whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
                         ->whereDate('fecha_solicitud', '>=', $this->fecha_desde->toDateString())->get();
 
-        dd($solicitudes);
+        //dd($solicitudes);
         $response = array();
         foreach($solicitudes as $item){
             $datos =   [
