@@ -137,6 +137,56 @@
                     
                 });
             });
+            $('#df_consulta_desde').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'dd/mm/yyyy',
+                locale: 'es-es',
+            });
+            $('#df_consulta_hasta').datepicker({
+                uiLibrary: 'bootstrap4',
+                format: 'dd/mm/yyyy',
+                locale: 'es-es',
+            });
+            $('#btnConsultaReporte').on('click', function(){
+                let fecha_desde = $('#df_consulta_desde').val();
+                let fecha_hasta = $('#df_consulta_hasta').val();
+                if(fecha_desde && fecha_hasta ){
+                    _dialog_msg_consulta = $.dialog({
+                        title: 'Obteniendo información ...',
+                        content: 'Este proceso puede demorar unos segundos',
+                        closeIcon: false,
+                        theme: 'material'
+                    });
+                    let params = {fecha_desde: fecha_desde, fecha_hasta: fecha_hasta};
+                    $.ajax({
+                        xhrFields: {
+                            responseType: 'blob',
+                        },
+                        type: 'POST',
+                        url: 'solicitudes/generar/reporte/',
+                        data: params,
+                        success: function(result, status, xhr) {
+                            if(_dialog_msg_consulta != null){
+                                _dialog_msg_consulta.close();
+                            }
+                            var blob = new Blob([result], {
+                                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                            });
+                            var link = document.createElement('a');
+                            link.href = window.URL.createObjectURL(blob);
+                            link.download = 'reporte';
+
+                            document.body.appendChild(link);
+
+                            link.click();
+                            document.body.removeChild(link);
+                        }
+                    });
+                
+                }else{
+                    showMsg('Advertencia','Debe seleccionar el rango de fechas sobre la cuál desea consultar', 'red');
+                }
+            });
         });
   </script>
   @endpush

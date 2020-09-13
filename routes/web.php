@@ -16,4 +16,5 @@ Route::group(['prefix' => 'sitio'], function () {
 
 Route::group(['prefix' => 'solicitudes'], function () {
     Route::delete('/eliminar/{data}', 'SolicitudController@destroy')->name('solicitudes.eliminar');
+    Route::post('/generar/reporte/', 'SolicitudController@reporte')->name('solicitudes.reporte');
 });  

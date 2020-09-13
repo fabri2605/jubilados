@@ -11,6 +11,7 @@ use DB;
 use Alert;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ReporteSolicitud;
 
 class SolicitudController extends Controller
 {
@@ -102,5 +103,11 @@ class SolicitudController extends Controller
         $response['msg']='El Solicitud  ha sido eliminado correctamente ';
 
         return $response;
+    }
+    public function reporte(Request $request){
+        $format = 'd/m/Y';
+        $date = Carbon::createFromFormat($format, $request->get('fecha_desde'));
+        $dateFin = Carbon::createFromFormat($format, $request->get('fecha_hasta'));
+        return Excel::download(new ReporteSolicitud($date,$dateFin), 'solicitudes-'. Carbon::now().'.xlsx',null,[\Maatwebsite\Excel\Excel::XLSX]);
     }
 }
