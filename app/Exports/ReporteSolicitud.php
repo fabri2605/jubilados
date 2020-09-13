@@ -64,7 +64,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
                         'apellido' => $item->apellido,
                         'nombre' =>  $item->nombre,
                         'sexo' =>  $item->sexo,
-                        'cuil' =>  $item->cuil,
+                        'cuil' =>  $item->cuit,
                         'tramite' =>  $item->nro_tramite,
                         'fecha_nacimiento' =>  Carbon::parse($item->fecha_nacimiento)->format('d/m/y'), 
                         'email' =>  $item->email,
