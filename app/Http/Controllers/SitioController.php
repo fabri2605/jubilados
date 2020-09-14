@@ -35,36 +35,60 @@ class SitioController extends Controller
     }
     public function registrar(Request $request){
         //return $request;
-        $validar = Solicitud::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
-        if(empty($validar)){
-            $data = explode('-',$request->get('cuit'));
-            $abono = Abono::where('dni','=',$request->get('dni'))->first();
-            $format = 'd/m/Y';
-            $date = Carbon::createFromFormat($format, $request->get('fecha_nacimiento'));
+        if($this->validarCuit($requesst->get('cuit'))){
+            $validar = Solicitud::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
+            if(empty($validar)){
+                $data = explode('-',$request->get('cuit'));
+                $abono = Abono::where('dni','=',$request->get('dni'))->first();
+                $format = 'd/m/Y';
+                $date = Carbon::createFromFormat($format, $request->get('fecha_nacimiento'));
 
-            $solicitud = (new Solicitud);
-            $solicitud->fill($request->all());
-            $solicitud->estado = 'SOLICITADO';
-            $solicitud->tipo_abono = $abono->abono;
-            $solicitud->fecha_nacimiento = $date;
-            $solicitud->save();
+                $solicitud = (new Solicitud);
+                $solicitud->fill($request->all());
+                $solicitud->nombre = ucfirst($request->get('nombre'));
+                $solicitud->apellido = ucfirst($request->get('apellido'));
+                $solicitud->calle = ucfirst($request->get('calle'));
+                $solicitud->localidad = ucfirst($request->get('localidad'));
+                $solicitud->estado = 'SOLICITADO';
+                $solicitud->tipo_abono = $abono->abono;
+                $solicitud->fecha_nacimiento = $date;
+                $solicitud->save();
 
-            $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
-            $solicitud->update();
-            
-            alert()->success('Información','Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->nro_solicitud);
-
-            return redirect()->route('home')->with('message', 'Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
+                $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
+                $solicitud->update();
+                
+                alert()->success('Información','Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->nro_solicitud);
+                return redirect()->route('home')->with('message', 'Se ha registrado la solicitud de Abono '.$solicitud->abono.' con el Nro de Solicitud '.$solicitud->tipo_abono);
+            }else{
+                alert()->success('Información','Ya se encuentra una solicitud pendiente con CUIL del solicitante');
+                return redirect()->route('home')->withInput($request->all());
+            }
         }else{
-
-            alert()->success('Información','Ya se encuentra una solicitud pendiente con CUIL del solicitante');
-
-            return redirect()->route('home')->withInput($request->all());
+            alert()->error('Importante','El CUIL ingresado no es válido');
         }
-
-        
-
-
     }
+    public function validarCuit($cuit){
+		if (strlen($cuit) != 13) return false;
+		$rv = false;
+		$resultado = 0;
+		$cuit_nro = str_replace("-", "", $cuit);
+		
+		$codes = "6789456789";
+		$cuit_long = intVal($cuit_nro);
+		$verificador = intVal($cuit_nro[strlen($cuit_nro)-1]);
+        
+		$x = 0;
+		while ($x < 10)
+		{
+			$digitoValidador = intVal(substr($codes, $x, 1));
+			$digito = intVal(substr($cuit_nro, $x, 1));
+			$digitoValidacion = $digitoValidador * $digito;
+			$resultado += $digitoValidacion;
+			$x++;
+		}
+		$resultado = intVal($resultado) % 11;
+		$rv = $resultado == $verificador;
+		return $rv;
+	}
     
 }

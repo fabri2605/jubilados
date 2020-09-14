@@ -70,9 +70,16 @@
 									<h3>Ingrese el Número de Trámite de su Documento Nacional de Identidad</h3>
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
                                 
-                                        <div class="form-inner-area">
-                                            <input type="text" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11"  placeholder="Ingrese Número de Trámite" data-inputmask="'mask': '99999999999'" required>
-                                        </div>
+									<div class="form-inner-area">
+										<input type="text" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11"  placeholder="Ingrese Número de Trámite" data-inputmask="'mask': '99999999999'" required>
+									</div>
+
+									<h3>Ingrese Nuevamente el Número de Trámite de su Documento Nacional de Identidad</h3>
+									<div class="form-inner-area">
+										<input type="text" name="nro_tramite_repetir" id="nro_tramite_repetir" class="form-control required" maxlength="11"  placeholder="Ingrese Nuevamente su Número de Trámite" data-inputmask="'mask': '99999999999'" required>
+									</div>
+
+
                                     <div align="center">
                                         <div class="col-6">
                                             <img src="sitio/images/dni-tramite.png" class="img-fluid">
@@ -110,8 +117,8 @@
 									<p>Por favor Complete el Siguiente Formulario.</p>
 									<div class="form-inner-area">
                                         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control required"  placeholder="Fecha de Nacimiento *"  data-inputmask-alias="date" data-inputmask-inputformat="dd/mm/yyyy"  required>
-                                        <input type="text" id="apellido" name="apellido" class="form-control required capital" minlength="2" placeholder="Apellido *" required>
-                                        <input type="text" id="nombre" name="nombre" class="form-control required capital" minlength="2" placeholder="Nombre *" required>
+                                        <input type="text" id="apellido" name="apellido" class="form-control required capital" minlength="2" placeholder="Apellido *" data-inputmask-regex="[A-Za-z]{25}" required>
+                                        <input type="text" id="nombre" name="nombre" class="form-control required capital" minlength="2" placeholder="Nombre *" data-inputmask-regex="[A-Za-z]{25}" required>
                                         <input type="text" id="cuit" name="cuit" class="form-control required" minlength="2" placeholder="CUIT *" data-inputmask="'mask': '99-99999999-9'" required>
 										<input type="text" id="email" name="email" class="form-control required" placeholder="Dirección de Correo Electrónico" data-inputmask="'alias': 'email'">
                                         <input type="text" id="celular" name="celular" class="form-control required" placeholder="Celular" data-inputmask="'mask': '+54 999 9999999'" >
@@ -206,7 +213,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="sitio/assets/js/bootstrap.min.js"></script>
 	<script src="js/jquery-confirm.min.js"></script>
-	<script src="sitio/assets/js/main.js"></script>
+	<script src="sitio/assets/js/main.js?version=2"></script>
     <script src="sitio/assets/js/switch.js"></script>
 	
 	

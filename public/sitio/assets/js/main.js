@@ -276,7 +276,10 @@ $(function() {
         
         if(activePanelNum == 0){
             tramite = $('#nro_tramite').val();
+            repetir = $('#nro_tramite_repetir').val();
             documento = $('#dni').val();
+
+            
             if(!documento){
                 $.alert({
                     title: 'Advertencia!',
@@ -286,6 +289,11 @@ $(function() {
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Debe ingresar el número de trámite!',
+                });
+            }else if(tramite != repetir){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'Los Campos de Número de Trámite y el Campo de Repetir Número de Trámite no Coinciden',
                 });
             }else if(tramite.length > 11 || tramite.length < 11){
                 $.alert({
