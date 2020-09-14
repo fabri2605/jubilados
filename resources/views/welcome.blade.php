@@ -33,8 +33,8 @@
 	<div class="wrapper">
 		<div class="steps-area steps-area-fixed">
 			<div class="image-holder">
-				<img class="d-block d-sm-none" src="sitio/assets/img/side-img.png" alt="">
-				<img class="d-none d-sm-block" src="sitio/assets/img/side-img-mobile.png" alt="">
+				<img class="d-none d-sm-block" src="sitio/assets/img/side-img.png" alt="">
+				<img class="d-block d-sm-none" src="sitio/assets/img/side-img-mobile.png" alt="">
 			</div>
 			<div class="steps clearfix">
 				<ul class="tablist multisteps-form__progress">
