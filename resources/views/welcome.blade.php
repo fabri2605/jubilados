@@ -271,102 +271,105 @@
 		$("#cuit" ).focusout(function() {
 			var vec = new Array(10);
 			var cuit = $(this).val();
-			esCuit=false;
-			esDni=false;
-			cuit_rearmado="";
-			errors = ''
-			for (i=0; i < cuit.length; i++){   
-				caracter=cuit.charAt( i);
-				if (caracter.charCodeAt(0) >= 48 && caracter.charCodeAt(0) <= 57){
-					cuit_rearmado +=caracter;
-				}
-			}
-			cuit=cuit_rearmado;
-			if( cuit.length != 11){  // si no estan todos los digitos
+			
+			if(cuit){
 				esCuit=false;
-			}else {
-				x=i=dv=0;
-				// Multiplico los dígitos.
-				vec[0] = cuit.charAt(  0) * 5;
-				vec[1] = cuit.charAt(  1) * 4;
-				vec[2] = cuit.charAt(  2) * 3;
-				vec[3] = cuit.charAt(  3) * 2;
-				vec[4] = cuit.charAt(  4) * 7;
-				vec[5] = cuit.charAt(  5) * 6;
-				vec[6] = cuit.charAt(  6) * 5;
-				vec[7] = cuit.charAt(  7) * 4;
-				vec[8] = cuit.charAt(  8) * 3;
-				vec[9] = cuit.charAt(  9) * 2;
-							
-				// Suma cada uno de los resultado.
-				for( i = 0;i<=9; i++) {
-					x += vec[i];
-				}
-				dv = (11 - (x % 11)) % 11;
-				if (dv == cuit.charAt( 10)){
-					esCuit=true;
-					_continuarPaso2 = true;
-				}
-				//valido que el DNI sea el mismo en cuit
-				let dni = $('#dni').val();
-				let dni_rearmado ='';
-				let zerofill = '';
-
-				if(dni.length < 8){
-					for(let i = dni.length; i < 8; i++){
-						zerofill+='0';
+				esDni=false;
+				cuit_rearmado="";
+				errors = ''
+				for (i=0; i < cuit.length; i++){   
+					caracter=cuit.charAt( i);
+					if (caracter.charCodeAt(0) >= 48 && caracter.charCodeAt(0) <= 57){
+						cuit_rearmado +=caracter;
 					}
-					dni_rearmado = zerofill+dni;
 				}
-				let dni_str = cuit_rearmado.substring(2,10);
+				cuit=cuit_rearmado;
+				if( cuit.length != 11){  // si no estan todos los digitos
+					esCuit=false;
+				}else {
+					x=i=dv=0;
+					// Multiplico los dígitos.
+					vec[0] = cuit.charAt(  0) * 5;
+					vec[1] = cuit.charAt(  1) * 4;
+					vec[2] = cuit.charAt(  2) * 3;
+					vec[3] = cuit.charAt(  3) * 2;
+					vec[4] = cuit.charAt(  4) * 7;
+					vec[5] = cuit.charAt(  5) * 6;
+					vec[6] = cuit.charAt(  6) * 5;
+					vec[7] = cuit.charAt(  7) * 4;
+					vec[8] = cuit.charAt(  8) * 3;
+					vec[9] = cuit.charAt(  9) * 2;
+								
+					// Suma cada uno de los resultado.
+					for( i = 0;i<=9; i++) {
+						x += vec[i];
+					}
+					dv = (11 - (x % 11)) % 11;
+					if (dv == cuit.charAt( 10)){
+						esCuit=true;
+						_continuarPaso2 = true;
+					}
+					//valido que el DNI sea el mismo en cuit
+					let dni = $('#dni').val();
+					let dni_rearmado ='';
+					let zerofill = '';
+
+					if(dni.length < 8){
+						for(let i = dni.length; i < 8; i++){
+							zerofill+='0';
+						}
+						dni_rearmado = zerofill+dni;
+					}
+					let dni_str = cuit_rearmado.substring(2,10);
 
 
-				if(dni_rearmado == dni_str){
-					esDni = true;
-					_continuarPaso2 = true;
+					if(dni_rearmado == dni_str){
+						esDni = true;
+						_continuarPaso2 = true;
+					}
 				}
-			}
-			if(!esCuit ) {
-				_continuarPaso2 = false;
-				$.alert({
-					title: 'Advertencia',
-					content: 'El CUIT ingresado no es válido',
-					type: 'red',
-					typeAnimated: true,
-					icon: 'mdi mdi-alert-circle '+'red',
-					buttons: {
-						tryAgain: {
-							text: 'Aceptar',
-							btnClass: 'btn-'+'red',
-							close: function(){
-								document.getElementById("cuit").focus();
-							}
-						},
+				if(!esCuit ) {
+					_continuarPaso2 = false;
+					$.alert({
+						title: 'Advertencia',
+						content: 'El CUIT ingresado no es válido',
+						type: 'red',
+						typeAnimated: true,
+						icon: 'mdi mdi-alert-circle '+'red',
+						buttons: {
+							tryAgain: {
+								text: 'Aceptar',
+								btnClass: 'btn-'+'red',
+								close: function(){
+									document.getElementById("cuit").focus();
+								}
+							},
+						
+						}
+					});
 					
-					}
-				});
-				
-			}
-			if(!esDni ) {
-				_continuarPaso2 = false;
-				$.alert({
-					title: 'Advertencia',
-					content: 'El DNI Ingresado no concuerda con el CUIL. Verifique',
-					type: 'red',
-					typeAnimated: true,
-					icon: 'mdi mdi-alert-circle '+'red',
-					buttons: {
-						tryAgain: {
-							text: 'Aceptar',
-							btnClass: 'btn-'+'red',
-							close: function(){
-								document.getElementById("cuit").focus();
-							}
-						},
+				}
+				if(!esDni ) {
+					_continuarPaso2 = false;
+					$.alert({
+						title: 'Advertencia',
+						content: 'El DNI Ingresado no concuerda con el CUIL. Verifique',
+						type: 'red',
+						typeAnimated: true,
+						icon: 'mdi mdi-alert-circle '+'red',
+						buttons: {
+							tryAgain: {
+								text: 'Aceptar',
+								btnClass: 'btn-'+'red',
+								close: function(){
+									document.getElementById("cuit").focus();
+								}
+							},
+						
+						}
+					});
 					
-					}
-				});
-				
+				}
 			}
 			
     	});
