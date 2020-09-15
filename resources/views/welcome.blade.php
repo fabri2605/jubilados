@@ -275,6 +275,7 @@
 			errors = ''
 			for (i=0; i < cuit.length; i++){   
 				caracter=cuit.charAt( i);
+				console.log('caracter', caracter);
 				if (caracter.charCodeAt(0) >= 48 && caracter.charCodeAt(0) <= 57){
 					cuit_rearmado +=caracter;
 				}
