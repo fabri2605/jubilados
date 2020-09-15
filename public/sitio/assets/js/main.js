@@ -324,6 +324,7 @@ $(function() {
             sexo = $("input[name='sexo']:checked").val();
             documento = $('#dni').val();
 
+            console.log('celular', celular.length);
             if(!apellido){
                 $.alert({
                     title: 'Advertencia!',

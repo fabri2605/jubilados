@@ -317,11 +317,9 @@
 						zerofill+='0';
 					}
 					dni_rearmado = zerofill+dni;
-					console.log('dni rearmado', dni_rearmado);
 				}
 				let dni_str = cuit_rearmado.substring(2,10);
 
-				console.log('dni cortado', dni_str);
 
 				if(dni_rearmado == dni_str){
 					esDni = true;
