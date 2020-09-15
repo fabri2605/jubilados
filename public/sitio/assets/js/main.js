@@ -322,6 +322,7 @@ $(function() {
             email = $('#email').val();
             fecha_nacimiento = $('#fecha_nacimiento').val();
             sexo = $("input[name='sexo']:checked").val();
+            documento = $('#dni').val();
 
             if(!apellido){
                 $.alert({

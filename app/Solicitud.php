@@ -34,6 +34,7 @@ class Solicitud extends Model
         'observaciones',
         'estado',
         'codigo_postal',
-        'fecha_solicitud'
+        'fecha_solicitud',
+        'dni'
     ];
 }

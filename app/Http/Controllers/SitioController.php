@@ -29,7 +29,13 @@ class SitioController extends Controller
             $response['msg'] =  'Ústed esta solicitando el abono por "'.$abono->abono.'"';
         }else{
             $response['status'] = 'error';
-            $response['msg'] =  'Registro no encontrado';
+            $response['msg'] =  'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacidad o Ley 7811.Para solicitar por primera vez su tarjeta, solicitarla a través de la App 148 Mendoza.';
+        }
+
+        $validar = Solicitud::where('dni','=',$request->get('documento'))->where('estado','=','SOLICITADO')->first();
+        if(!empty($validar)){
+            $response['status'] = 'error';
+            $response['msg'] =  'Ud. ya tiene una solicitud con el DNI ingresado';
         }
         return $response;
     }

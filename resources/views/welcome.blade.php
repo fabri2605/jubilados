@@ -242,7 +242,7 @@
 							document.getElementById("dni").focus();
 							$.alert({
 								title: 'Advertencia',
-								content: 'Ud. No está Registrado como Beneficiario Jubilado o Mayores de 70 años o Discapacidad o Ley 7811.Para solicitar por primera vez su tarjeta, solicitarla a través de la App 148 Mendoza.',
+								content: data.msg,
 								type: 'red',
 								typeAnimated: true,
 								icon: 'mdi mdi-alert-circle '+'red',
@@ -280,6 +280,7 @@
 				}
 			}
 			cuit=cuit_rearmado;
+			console.log('rearmado', cuit_rearmado);
 			if( cuit.length != 11){  // si no estan todos los digitos
 				esCuit=false;
 			}else {
@@ -304,6 +305,7 @@
 				if (dv == cuit.charAt( 10)){
 					esCuit=true;
 				}
+				
 			}
 			if(!esCuit ) {
 				$.alert({
