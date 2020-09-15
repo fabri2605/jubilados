@@ -213,7 +213,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="sitio/assets/js/bootstrap.min.js"></script>
 	<script src="js/jquery-confirm.min.js"></script>
-	<script src="sitio/assets/js/main.js?version=2"></script>
+	<script src="sitio/assets/js/main.js?version=5"></script>
     <script src="sitio/assets/js/switch.js"></script>
 	
 	
@@ -221,7 +221,11 @@
 		_validate = null;
 		_continuar = true;
         $(document).ready(function(){
-            $(":input").inputmask();_validate = null;
+			$(":input").inputmask();_validate = null;
+			
+			$('#nombre').inputmask({ "placeholder": "" });
+			$('#apellido').inputmask({ "placeholder": "" });
+
 			$("#dni" ).focusout(function() {	
 				let val = $(this).val();
 				if((val != _validate) && val){
