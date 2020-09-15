@@ -25,6 +25,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
     {
         $cabecera = array();
         array_push($cabecera, 'NRO SOLICITUD');
+        array_push($cabecera, 'ABONO');
         array_push($cabecera, 'FECHA');
         array_push($cabecera, 'HORA');
         array_push($cabecera, 'APELLIDO');
@@ -59,6 +60,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
         foreach($solicitudes as $item){
             $datos =   [
                         'nro_solicitud' => $item->nro_solicitud,
+                        'abono' => $item->abono,
                         'fecha' => Carbon::parse($item->fecha_solicitud)->format('d/m/y'), 
                         'hora' => Carbon::parse($item->fecha_solicitud)->format('H:i:s'),
                         'apellido' => $item->apellido,

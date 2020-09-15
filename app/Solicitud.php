@@ -35,6 +35,7 @@ class Solicitud extends Model
         'estado',
         'codigo_postal',
         'fecha_solicitud',
-        'dni'
+        'dni',
+        'abono'
     ];
 }

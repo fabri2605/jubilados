@@ -66,6 +66,7 @@
 									<h3>Ingrese el Número de D.N.I</h3>
 									<div class="form-inner-area">
 										<input type="number" name="dni" id="dni" class="form-control required" maxlength="11" minlength="8" placeholder="Ingrese Número de Documento" required>
+										<input type="hidden" name="abono" id="abono">
 									</div>
 									<h3>Ingrese el Número de Trámite de su Documento Nacional de Identidad</h3>
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
@@ -263,6 +264,7 @@
 							
 						}else{
 							$('#abono-solicitado').text(data.msg);
+							$('#abono').val(data.abono);
 							_continuar = true;
 						}
 					});

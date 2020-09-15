@@ -25,7 +25,7 @@ class SitioController extends Controller
         $abono = Abono::where('dni','=',$data)->first();
         if(!empty($abono)){
             $response['status'] = 'success';
-            $response['abono'] =  $abono;
+            $response['abono'] =  $abono->abono;
             $response['msg'] =  'Ústed esta solicitando el abono por "'.$abono->abono.'"';
         }else{
             $response['status'] = 'error';
