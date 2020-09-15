@@ -323,7 +323,11 @@
 					
 					let aux = cuit_rearmado;
 					console.log('cuit', aux);
-					let dni_str = aux.substring(2,10);
+					let dni_str ='';
+					for(let posicion = 2; posicion < 9; posicion++){
+						dni_str+=aux.charAt(posicion);
+					}
+					
 
 					console.log('dnir', dni_rearmado);
 					console.log('dnis', dni_str);
