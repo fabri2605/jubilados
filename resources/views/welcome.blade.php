@@ -319,7 +319,7 @@
 					dni_rearmado = zerofill+dni;
 					console.log('dni rearmado', dni_rearmado);
 				}
-				let dni_str = cuit_rearmado.substring(3,10);
+				let dni_str = cuit_rearmado.substring(2,10);
 
 				console.log('dni cortado', dni_str);
 
