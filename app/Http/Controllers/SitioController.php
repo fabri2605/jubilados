@@ -35,7 +35,7 @@ class SitioController extends Controller
     }
     public function registrar(Request $request){
         //return $request;
-        if($this->validarCuit($requesst->get('cuit'))){
+        //if($this->validarCuit($requesst->get('cuit'))){
             $validar = Solicitud::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
             if(empty($validar)){
                 $data = explode('-',$request->get('cuit'));
@@ -63,9 +63,9 @@ class SitioController extends Controller
                 alert()->success('Información','Ya se encuentra una solicitud pendiente con CUIL del solicitante');
                 return redirect()->route('home')->withInput($request->all());
             }
-        }else{
+       /* }else{
             alert()->error('Importante','El CUIL ingresado no es válido');
-        }
+        }*/
     }
     public function validarCuit($cuit){
 		if (strlen($cuit) != 13) return false;
