@@ -164,7 +164,7 @@
 										</div>
 									</div>
 									<h2>Complete los Datos de su Domicilio</h2>
-                                    <p>Por favor Complete el Formulario con los Datos de su Domicilio donde recibirá la tarjeta</p>
+                                    <p>Es Muy Importante Completar los Campos Correctamente, ya que Serán Utilizados para Generar su Tarjeta SUBE y que esta Llegue a su Domicilio</p>
                                     <div class="form-inner-area">
 									    <input type="text" name="calle" id="calle" class="form-control required capital" placeholder="Calle de su Domicilio *" required>
                                         <input type="number" name="nro_calle" id="nro_calle" class="form-control required col-lg-5 col-xs-3"  placeholder="Numeración de su Domicilio" required>
