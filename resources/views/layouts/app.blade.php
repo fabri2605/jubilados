@@ -169,13 +169,15 @@
                                     </div>
                                     <!-- End User Profile-->
                                 </li>
-                                @if(Auth::user()->hasRoles(['admin']))
+                                @if(Auth::user()->hasRoles(['admin','user']))
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('solicitudes.index')}}" aria-expanded="false">
                                             <i class="mdi mdi-comment-question-outline"></i>
                                             <span class="hide-menu">Solicitudes </span>
                                         </a>
                                     </li>
+                                @endif
+                                @if(Auth::user()->hasRoles(['admin']))
                                     <li class="sidebar-item sitem">
                                         <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
                                             <i class="mdi mdi-settings"></i>
