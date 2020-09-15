@@ -303,7 +303,7 @@ $(function() {
             }else if(_continuar == false){
                 $.alert({
                     title: 'Advertencia!',
-                    content: 'Ud. no está registrado como beneficiario jubilado o mayores de 70 años o discapacitados o ley 7811',
+                    content: 'Ud. no está registrado como beneficiario jubilado o mayores de 70 años o Discapacidad o ley 7811',
                 });
             }else{
                 $("html, body").animate({
@@ -329,10 +329,20 @@ $(function() {
                     title: 'Advertencia!',
                     content: 'Ingrese su apellido',
                 });
+            }else if(apellido.length < 3){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'El Apellido debe contener al menos 3 caracteres',
+                });
             }else if(!nombre){
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Ingrese su nombre',
+                });
+            }else if(nombre.length < 3){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'El Nombre debe contener al menos 3 caracteres',
                 });
             }else if(!cuit){
                 $.alert({
@@ -344,6 +354,12 @@ $(function() {
                     title: 'Advertencia!',
                     content: 'Ingrese su número de celular',
                 });
+            }else if(celular.length != 10 ){
+                console.log('telefono ingresado', celular);
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'Debe ingresar todos los dígitos del número de celular',
+                });
             }else if(!fecha_nacimiento){
                 $.alert({
                     title: 'Advertencia!',
@@ -353,6 +369,11 @@ $(function() {
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Seleccione su sexo',
+                });
+            }else if(!_continuarPaso2){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'El DNI no concuerda con el CUIT Ingresado',
                 });
             }else{
                 $("html, body").animate({
@@ -378,6 +399,11 @@ $(function() {
                     title: 'Advertencia!',
                     content: 'Ingrese la calle de su domicilio',
                 });
+            }else if(calle.length < 3){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'El nombre de la calle no debe tener menos de 3 caracteres',
+                });
             }else if(!nro_calle){
                 $.alert({
                     title: 'Advertencia!',
@@ -388,6 +414,11 @@ $(function() {
                     title: 'Advertencia!',
                     content: 'Ingrese la localidad de su domicilio',
                 });
+            }else if(localidad.length < 3){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'La localidad no debe tener menos de 3 caracteres',
+                });
             }else if(!departamento){
                 $.alert({
                     title: 'Advertencia!',
@@ -397,6 +428,11 @@ $(function() {
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Ingrese su código postal de 4 dígitos',
+                });
+            }else if(codigo_postal.length != 4){
+                $.alert({
+                    title: 'Advertencia!',
+                    content: 'El Código Postal debe contar con 4 dígitos',
                 });
             }else{
                 alert('finalizo');
