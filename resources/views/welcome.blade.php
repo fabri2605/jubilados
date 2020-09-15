@@ -320,8 +320,10 @@
 						}
 						dni_rearmado = zerofill+dni;
 					}
-					console.log('cuit', cuit_rearmado);
-					let dni_str = cuit_rearmado.substring(2,10);
+					
+					let aux = cuit_rearmado;
+					console.log('cuit', aux);
+					let dni_str = aux.substring(2,10);
 
 					console.log('dnir', dni_rearmado);
 					console.log('dnis', dni_str);
