@@ -321,6 +321,8 @@
 				}
 				let dni_str = cuit_rearmado.substring(3,10);
 
+				console.log('dni cortado', dni_str);
+
 				if(dni_rearmado == dni_str){
 					esDni = true;
 					_continuarPaso2 = true;
