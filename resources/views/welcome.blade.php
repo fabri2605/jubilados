@@ -275,13 +275,11 @@
 			errors = ''
 			for (i=0; i < cuit.length; i++){   
 				caracter=cuit.charAt( i);
-				console.log('caracter', caracter);
 				if (caracter.charCodeAt(0) >= 48 && caracter.charCodeAt(0) <= 57){
 					cuit_rearmado +=caracter;
 				}
 			}
 			cuit=cuit_rearmado;
-			console.log('rearmado', cuit_rearmado);
 			if( cuit.length != 11){  // si no estan todos los digitos
 				esCuit=false;
 			}else {
@@ -306,7 +304,22 @@
 				if (dv == cuit.charAt( 10)){
 					esCuit=true;
 				}
-				
+				//valido que el DNI sea el mismo en cuit
+				let dni = $('#dni').val();
+				let dni_rearmado ='';
+				let zerofill = null;
+
+				if(dni.length < 8){
+					for(let i = dni.length; i < 8; i++){
+						zerofill+='0';
+					}
+					dni_rearmado = zerofill+dni;
+					console.log('dni rearmado', dni_rearmado);
+				}
+
+
+
+
 			}
 			if(!esCuit ) {
 				$.alert({
