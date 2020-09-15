@@ -226,6 +226,8 @@
 			
 			$('#nombre').inputmask({ "placeholder": "" });
 			$('#apellido').inputmask({ "placeholder": "" });
+			$('#nro_tramite').inputmask({ "placeholder": "" });
+			$('#nro_tramite_repetir').inputmask({ "placeholder": "" });
 
 			$("#dni" ).focusout(function() {	
 				let val = $(this).val();
