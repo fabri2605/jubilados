@@ -213,7 +213,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="sitio/assets/js/bootstrap.min.js"></script>
 	<script src="js/jquery-confirm.min.js"></script>
-	<script src="sitio/assets/js/main.js?version=8"></script>
+	<script src="sitio/assets/js/main.js?version=20"></script>
     <script src="sitio/assets/js/switch.js"></script>
 	
 	
@@ -319,18 +319,11 @@
 							zerofill+='0';
 						}
 						dni_rearmado = zerofill+dni;
+					}else{
+						dni_rearmado = dni;
 					}
-					
-					let aux = cuit_rearmado;
-					console.log('cuit', aux);
-					let dni_str ='';
-					for(let posicion = 2; posicion < 9; posicion++){
-						dni_str+=aux.charAt(posicion);
-					}
-					
 
-					console.log('dnir', dni_rearmado);
-					console.log('dnis', dni_str);
+					let dni_str = cuit_rearmado.substring(2,10);
 					if(dni_rearmado == dni_str){
 						esDni = true;
 						_continuarPaso2 = true;
