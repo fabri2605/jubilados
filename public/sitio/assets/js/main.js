@@ -324,7 +324,6 @@ $(function() {
             sexo = $("input[name='sexo']:checked").val();
             documento = $('#dni').val();
 
-            console.log('celular', celular.length);
             if(!apellido){
                 $.alert({
                     title: 'Advertencia!',
@@ -355,8 +354,7 @@ $(function() {
                     title: 'Advertencia!',
                     content: 'Ingrese su número de celular',
                 });
-            }else if(celular.length != 10 ){
-                console.log('telefono ingresado', celular);
+            }else if(celular.length != 15 ){
                 $.alert({
                     title: 'Advertencia!',
                     content: 'Debe ingresar todos los dígitos del número de celular',
