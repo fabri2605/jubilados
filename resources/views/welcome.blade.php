@@ -319,6 +319,10 @@
 					dni_rearmado = zerofill+dni;
 					console.log('dni rearmado', dni_rearmado);
 				}
+				let dni_str = cuit_rearmado.substring(3,8);
+				console.log('dni cortado', dni_str);
+
+
 				if(dni_rearmado == dni){
 					esDni = true;
 					_continuarPaso2 = true;
