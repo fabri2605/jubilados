@@ -52,6 +52,7 @@ class SitioController extends Controller
                 $solicitud->estado = 'SOLICITADO';
                 $solicitud->tipo_abono = $abono->abono;
                 $solicitud->fecha_nacimiento = $date;
+                $solicitud->fecha_solicitud = Carbon::now();
                 $solicitud->save();
 
                 $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
