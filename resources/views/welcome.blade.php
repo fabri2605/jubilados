@@ -213,7 +213,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="sitio/assets/js/bootstrap.min.js"></script>
 	<script src="js/jquery-confirm.min.js"></script>
-	<script src="sitio/assets/js/main.js?version=5"></script>
+	<script src="sitio/assets/js/main.js?version=8"></script>
     <script src="sitio/assets/js/switch.js"></script>
 	
 	
