@@ -118,8 +118,8 @@
 									<p>Por favor Complete el Siguiente Formulario.</p>
 									<div class="form-inner-area">
                                         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control required"  placeholder="Fecha de Nacimiento *"  data-inputmask-alias="date" data-inputmask-inputformat="dd/mm/yyyy"  required>
-                                        <input type="text" id="apellido" name="apellido" class="form-control required capital" minlength="2" placeholder="Apellido *" data-inputmask-regex="[A-Za-z]{25}" required>
-                                        <input type="text" id="nombre" name="nombre" class="form-control required capital" minlength="2" placeholder="Nombre *" data-inputmask-regex="[A-Za-z]{25}" required>
+                                        <input type="text" id="apellido" name="apellido" class="form-control required capital" minlength="2" placeholder="Apellido *" data-inputmask-regex="[A-Za-z \u00f1\u00d1]{25}" required>
+                                        <input type="text" id="nombre" name="nombre" class="form-control required capital" minlength="2" placeholder="Nombre *" data-inputmask-regex="[A-Za-z \u00f1\u00d1]{25}" required>
                                         <input type="text" id="cuit" name="cuit" class="form-control required" minlength="2" placeholder="CUIT *" data-inputmask="'mask': '99-99999999-9'" required>
 										<input type="text" id="email" name="email" class="form-control required" placeholder="Dirección de Correo Electrónico" data-inputmask="'alias': 'email'">
                                         <input type="text" id="celular" name="celular" class="form-control required" placeholder="Celular" data-inputmask="'mask': '+54 999 9999999'" >
