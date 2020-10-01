@@ -60,7 +60,7 @@ class ReporteSolicitud implements FromCollection,WithHeadings,ShouldAutoSize
         foreach($solicitudes as $item){
             $datos =   [
                         'nro_solicitud' => $item->nro_solicitud,
-                        'abono' => $item->abono,
+                        'abono' => $item->tipo_abono,
                         'fecha' => Carbon::parse($item->fecha_solicitud)->format('d/m/y'), 
                         'hora' => Carbon::parse($item->fecha_solicitud)->format('H:i:s'),
                         'apellido' => $item->apellido,
