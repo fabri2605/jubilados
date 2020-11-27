@@ -6,7 +6,7 @@
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">  
 <div class="col-xs-12 col-lg-12 " style="margin-top:10px; margin-bottom: 10px;">
     <div class="row">
-        <button type="button" class="btn btn-danger cblanco btn-sm col-lg-3 col-xs-7" id="btnImportar" >
+        <button type="button" class="btn btn-danger cblanco btn-sm col-lg-2 col-xs-7" id="btnImportar" >
             <i class="ti-cloud"></i>
             Importar Registros
         </button>
@@ -28,6 +28,44 @@
         var _dialog_msg = null;
         var _dialog_msg_consulta = null;
         var _rechazdo_id = null;
+        function uploadFile(evt){
+                var file = document.getElementById(evt.id).files[0];
+                if(file){
+                    var formData = new FormData();
+                    formData.append('file', file);
+                    _dialog_msg = $.dialog({
+                        title: 'Subiendo archivo  ...',
+                        content: 'Por favor espere....',
+                        closeIcon: false,
+                        theme: 'material'
+                    });
+                    $.ajax({
+                        url: '/enviados/importar/',  
+                        type: 'POST',
+                        headers: {
+                            'X-CSRF-TOKEN': document.getElementsByName('_token')[0].value
+                        },
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function(response){
+                            if(_dialog_msg != null){
+                                _dialog_msg.close();
+                            }
+                            if(response.status == 'success'){
+                                showMsg('Aviso', 'Archivo importado!');
+                                $('#modalImportar').modal('toggle');
+                            }
+                        },
+                        error: function(response){
+                            if(_dialog_msg != null){
+                                _dialog_msg.close();
+                            }
+                        }
+                    });
+
+                }
+            }
         $(function () {
             
             $.ajaxSetup({
@@ -83,44 +121,7 @@
             $('#btnImportar').on('click',function(){
                 $('#modalImportar').modal('show');
             })
-            function uploadFile(evt){
-                var file = document.getElementById(evt.id).files[0];
-                if(file){
-                    var formData = new FormData();
-                    formData.append('file', file);
-                    _dialog_msg = $.dialog({
-                        title: 'Subiendo archivo  ...',
-                        content: 'Por favor espere....',
-                        closeIcon: false,
-                        theme: 'material'
-                    });
-                    $.ajax({
-                        url: '/enviados/importar/',  
-                        type: 'POST',
-                        headers: {
-                            'X-CSRF-TOKEN': document.getElementsByName('_token')[0].value
-                        },
-                        data: formData,
-                        contentType: false,
-                        processData: false,
-                        success: function(response){
-                            if(_dialog_msg != null){
-                                _dialog_msg.close();
-                            }
-                            if(response.status == 'success'){
-                                showMsg('Aviso', 'Archivo importado!');
-                                $('#modalImportar').modal('toggle');
-                            }
-                        },
-                        error: function(response){
-                            if(_dialog_msg != null){
-                                _dialog_msg.close();
-                            }
-                        }
-                    });
-
-                }
-            }
+            
         });
   </script>
   @endpush

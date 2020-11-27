@@ -19,7 +19,7 @@
                               </div>
                           </div>
                           <div class="col-md-7">
-                            <input type="file" name="archivo_importar" id="archivo_importar" onchange="uploadFile(this)" class="form-control" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  >
+                            <input type="file" class="form-control" name="archivo_importar" id="archivo_importar" onchange="uploadFile(this)" class="form-control" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  >
                           </div>
                       </div>
                     </form>
