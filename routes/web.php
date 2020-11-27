@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', 'SitioController@sitio')->name('home');
-Route::get('/landing', 'SitioController@landing')->name('landing');
+Route::get('/inicio', 'SitioController@landing')->name('inicio');
 Route::get('/home', 'HomeController@index')->name('menu');
 
 Route::resource('users', 'UserController');
