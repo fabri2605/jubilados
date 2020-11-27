@@ -7,6 +7,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="container-fluid">
+                    @include('enviados.modal')
                     @include('enviados.table')    
                 </div>
             </div>

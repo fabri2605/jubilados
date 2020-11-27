@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Enviado;
 use Illuminate\Http\Request;
-use App\Http\Requests\TurnoRequest;
 use DataTables;
 use DB;
 use Alert;
 use Carbon\Carbon;
+use App\Imports\EnviadoImport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\ReporteSolicitud;
+
 
 class EnviadoController extends Controller
 {
@@ -28,6 +28,11 @@ class EnviadoController extends Controller
         return view('enviados.index');
     }
     public function importar(Request $request){
-        
+        if($request->has('file')){
+            Excel::import(new EnviadoImport(), request()->file('file'));
+        }
+        $response = array();
+        $response['status'] = 'success';
+        return $response;
     }
 }
