@@ -6,7 +6,7 @@
 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">  
 <div class="col-xs-12 col-lg-12 " style="margin-top:10px; margin-bottom: 10px;">
     <div class="row">
-        <button type="button" class="btn btn-danger cblanco btn-sm col-lg-1 col-xs-7" id="btnImportar" >
+        <button type="button" class="btn btn-danger cblanco btn-sm col-lg-4 col-xs-7" id="btnImportar" >
             <i class="ti-cloud"></i>
             Importar Registros
         </button>
