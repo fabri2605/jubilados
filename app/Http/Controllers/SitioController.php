@@ -20,7 +20,7 @@ class SitioController extends Controller
     }
     public function landing(){
         $agent = new Agent();
-        return view('sitio');
+        return view('inicio');
     }
     public function validarAbono(Request $request){
         $response = array();
