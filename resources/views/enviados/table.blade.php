@@ -95,7 +95,7 @@
                         theme: 'material'
                     });
                     $.ajax({
-                        url: '/formularios/importar/redireccion/login',  
+                        url: '/enviados/importar/',  
                         type: 'POST',
                         headers: {
                             'X-CSRF-TOKEN': document.getElementsByName('_token')[0].value
