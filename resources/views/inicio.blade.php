@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="container-fluid">
         <img src="/landing/cabecera.png" class="img-fluid">
     </div>
 
