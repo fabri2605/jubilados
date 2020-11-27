@@ -67,7 +67,7 @@
                 ],
                 scrollX: true,
                 ajax: {
-                    url: "{{ route('solicitudes.index') }}",
+                    url: "{{ route('enviados.index') }}",
                 },
                 columns: [
                     {data: 'documento', name: 'documento'},
