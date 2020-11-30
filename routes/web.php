@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', 'SitioController@sitio')->name('home');
+Route::get('/particulares', 'SitioController@particulares')->name('particulares');
 Route::get('/inicio', 'SitioController@landing')->name('inicio');
 Route::get('/home', 'HomeController@index')->name('menu');
 
@@ -12,6 +13,8 @@ Route::resource('solicitudes', 'SolicitudController');
 
 Route::group(['prefix' => 'sitio'], function () {
     Route::post('/validar/abono', 'SitioController@validarAbono')->name('sitio.abono');
+    Route::post('/validar/abono/particular', 'SitioController@validarAbonoParticular')->name('sitio.abono_particular');
+    Route::post('/registrar/abono/particulares', 'SitioController@registrarParticular')->name('sitio.abono_registro');
     Route::post('/registrar', 'SitioController@registrar')->name('sitio.registrar');
 });  
 

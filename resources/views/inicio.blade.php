@@ -9,6 +9,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 	<link rel="stylesheet" href="/sitio/assets/css/animate.min.css">
 	<link rel="stylesheet" href="/sitio/assets/css/fontawesome-all.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="/sitio/assets/css/colors/switch.css">
 	<!-- Color Alternatives -->
@@ -16,20 +18,71 @@
 	<link href="/sitio/assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
 	<link href="/sitio/assets/css/colors/color-4.css" rel="alternate stylesheet" type="text/css" title="color-4">
 	<link href="/sitio/assets/css/colors/color-5.css" rel="alternate stylesheet" type="text/css" title="color-5">
-
-	<link rel="stylesheet" href="/css/jquery-confirm.min.css">
+	<link rel="stylesheet" type="text/css" href="/sitio/assets/css/colors/switch.css">
+	<link rel="stylesheet" href="/landing/fontawesome/css/all.css">
 	<style>
+		*{
+			font-family: 'Roboto', sans-serif;
+		}
 		.capital{
 			text-transform: capitalize;
 		}
+		.cabecera {
+			height: 300px !important;
+		}
+		.carousel .item img {
+			max-height: 300px;
+			min-width: auto;
+		}
+		.elemento{
+			font-weight: 500;
+    		text-align: center;
+    		width: 190px;
+    		vertical-align: top;
+		}
 	</style>
 </head>
-
 <body>
-    <div class="container-fluid">
-        <img src="/landing/cabecera.png" class="img-fluid">
-    </div>
-
+	<main role="main">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <div class="carousel-inner">
+			<div class="carousel-item active ">
+			  <img class="first-slide img-fluid" src="landing/cabecera.png" alt="First slide">
+			</div>
+		  </div>
+		</div>
+		<br>
+		<div class="container marketing">
+		  <div class="row">
+			<div class="col-lg-4">
+				<a href="https://sube.mendoza.gov.ar" class="btn btn-primary btn-lg" role="button" aria-pressed="true">
+					<i class="fas fa-mail-bulk"></i>
+				</a>
+				<br/><br/>
+				<h2>Retirala</h2>
+				<p>Solicita tu Tarjeta SUBE y retirala por las UGS habilitadas.</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<a href="{{route('particulares')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+					<i class="fas fa-mail-bulk"></i>
+				</a>
+				<br/><br/>
+				<h2>Abono SUBE</h2>
+				<p>Solicita tu tarjeta SUBE para ser envada a tu Domicilio</p>
+			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-4">
+				<a href="{{route('home')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+					<i class="fas fa-mail-bulk"></i>
+				</a>
+				<br/><br/>
+				<h2>Abono de Jubilado</h2>
+				<p>Solicite su Tarjeta SUBE para ser enviada a su Domcilio</p>
+			</div><!-- /.col-lg-4 -->
+		  </div><!-- /.row -->
+  
+		  <hr class="featurette-divider">
+		</div><!-- /.container -->
+	  </main>
 
 
 
