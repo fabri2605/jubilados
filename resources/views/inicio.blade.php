@@ -60,7 +60,7 @@
 				</a>
 				<br/><br/>
 				<h2>Retirala</h2>
-				<p>Solicita tu Tarjeta SUBE y retirala por las UGS habilitadas.</p>
+				<p>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811, solicite su Tarjeta SUBE y sera enviada a su domicilio, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<a href="{{route('particulares')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
@@ -68,7 +68,7 @@
 				</a>
 				<br/><br/>
 				<h2>Abono SUBE</h2>
-				<p>Solicita tu tarjeta SUBE para ser envada a tu Domicilio</p>
+				<p>Si Ud. todavia no tiene su Tarjeta SUBE, ,solicitela y sera enviada a su domicilio sin cargo, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<a href="{{route('home')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
@@ -76,7 +76,7 @@
 				</a>
 				<br/><br/>
 				<h2>Abono de Jubilado</h2>
-				<p>Solicite su Tarjeta SUBE para ser enviada a su Domcilio</p>
+				<p>Si Ud. quiere gestionar un Abono con Tarjeta SUBE, solicite un turno en el lugar de su convenciencia, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
 		  </div><!-- /.row -->
   
