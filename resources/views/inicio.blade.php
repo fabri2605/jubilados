@@ -54,30 +54,32 @@
 		<br>
 		<div class="container marketing">
 		  <div class="row">
-			<div class="col-lg-4">
-				<a href="https://sube.mendoza.gov.ar" class="btn btn-primary btn-lg" role="button" aria-pressed="true">
+			<div class="col-lg-3"></div>
+			<div class="col-lg-2">
+				<a href="https://sube.mendoza.gov.ar" class="btn btn-lg" role="button" aria-pressed="true">
 					<img src="images/turno.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Retirala</h2>
 				<p>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811, solicite su Tarjeta SUBE y sera enviada a su domicilio, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<a href="{{route('particulares')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+			<div class="col-lg-2">
+				<a href="{{route('particulares')}}" class="btn  btn-lg active" role="button" aria-pressed="true">
 					<img src="images/abono.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Abono SUBE</h2>
 				<p>Si Ud. todavia no tiene su Tarjeta SUBE, ,solicitela y sera enviada a su domicilio sin cargo, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<a href="{{route('home')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+			<div class="col-lg-2">
+				<a href="{{route('home')}}" class="btn  btn-lg active" role="button" aria-pressed="true">
 					<img src="images/abono.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Abono de Jubilado</h2>
 				<p>Si Ud. quiere gestionar un Abono con Tarjeta SUBE, solicite un turno en el lugar de su convenciencia, haciendo click aqui</p>
 			</div><!-- /.col-lg-4 -->
+			<div class="col-lg-3"></div>
 		  </div><!-- /.row -->
   
 		  <hr class="featurette-divider">
