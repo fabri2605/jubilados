@@ -56,7 +56,7 @@
 		  <div class="row">
 			<div class="col-lg-4">
 				<a href="https://sube.mendoza.gov.ar" class="btn btn-primary btn-lg" role="button" aria-pressed="true">
-					<i class="fas fa-mail-bulk"></i>
+					<img src="images/turno.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Retirala</h2>
@@ -64,7 +64,7 @@
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<a href="{{route('particulares')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
-					<i class="fas fa-mail-bulk"></i>
+					<img src="images/abono.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Abono SUBE</h2>
@@ -72,7 +72,7 @@
 			</div><!-- /.col-lg-4 -->
 			<div class="col-lg-4">
 				<a href="{{route('home')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
-					<i class="fas fa-mail-bulk"></i>
+					<img src="images/abono.png" class="img-fluid">
 				</a>
 				<br/><br/>
 				<h2>Abono de Jubilado</h2>
