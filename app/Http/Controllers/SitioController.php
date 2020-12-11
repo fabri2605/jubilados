@@ -128,7 +128,7 @@ class SitioController extends Controller
                 $solicitud->calle = ucfirst($request->get('calle'));
                 $solicitud->localidad = ucfirst($request->get('localidad'));
                 $solicitud->estado = 'SOLICITADO';
-                $solicitud->tipo_abono = 'RESTO';
+                $solicitud->tipo_abono = 'PARTICULARES';
                 $solicitud->fecha_nacimiento = $date;
                 $solicitud->fecha_solicitud = Carbon::now();
                 $solicitud->save();

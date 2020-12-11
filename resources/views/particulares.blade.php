@@ -59,8 +59,7 @@
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
 									<!--<span class="step-no">PASO 1</span>!-->
-									<h4>Si Ud. es actualmente beneficiario del Abono SUBE solicite su Tarjeta SUBE completando el siguiente
-										formulario. Su Tarjeta SUBE sera enviada a su domicilio.</h4>
+									<h4>Si Ud. todavia no tiene su tarjeta SUBE, solicitela completando el siguiente formulario. Su Tarjeta SUBE sera enviada a su domicilio sin cargo.</h4>
 									<hr>
 									<h3>Ingrese el Número de D.N.I</h3>
 									<div class="form-inner-area">
