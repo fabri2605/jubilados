@@ -75,8 +75,8 @@
 					<img src="images/abono.png" class="img-fluid">
 				</a>
 				<br/><br/>
-				<h2>Abono de Jubilado</h2>
-				<p>Si Ud. es actualmente beneficiario del Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811, solicite su Tarjeta SUBE y sera enviada a su domicilio, haciendo click aqui</p>
+				<h2>Abono de Jubilado, Mayores de 70 y Discapacidad</h2>
+				<p>Si Ud. es actualmente beneficiario del <b>Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811</b>, solicite su Tarjeta SUBE y sera enviada a su domicilio, haciendo click aqui</p>
 				
 			</div><!-- /.col-lg-4 -->
 		  </div><!-- /.row -->
