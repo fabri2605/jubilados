@@ -212,11 +212,84 @@ function initMap(lat,lng){
         _load_map = true;
        basicmap();
     }else{
-        _marker.setMap(null);
-        _marker = new google.maps.Marker({
-            position: new google.maps.LatLng(_lat, _lng),
+        //Casa de Gobierno 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.8982778, -68.84636111111111),
             map: _map,
+            title: "Ventanilla Única (Casa de Gobierno). Lunes a Viernes de 09 a 15hs."
         });
+
+        //Grupo 100 (STM) 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.873294, -68.844357),
+            map: _map,
+            title: "Grupo 100 (STM). Lunes a Viernes de 09 a 13hs."
+        });
+
+        //Centro Atención en Perú y Rivadavia
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.8902222, -68.84855555555555),
+            map: _map,
+            title: "Centro Atención en Perú y Rivadavia. Lunes a Viernes de 09 a 16hs. Sábado de 09 a 12hs"
+        });
+
+         //Grupo 200 
+         new google.maps.Marker({
+            position: new google.maps.LatLng(-32.93036, -68.746273),
+            map: _map,
+            title: "Grupo 200. Lunes a Viernes de 09 a 16hs. Sábados de 09 a 11hs"
+        });
+
+        //Grupo 300 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.965223, -68.841457),
+            map: _map,
+            title: "Grupo 200. Lunes a Viernes de 08 a 16hs. Sábados de 09 a 11hs"
+        });
+
+        //Grupo 400 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.941877, -68.841679),
+            map: _map,
+            title: "Grupo 400. Lunes a Viernes de 08 a 16hs. Sábados de 09 a 12hs"
+        });
+
+        //Grupo 700 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.968331, -68.849333),
+            map: _map,
+            title: "Grupo 700. Lunes a Viernes de 08 a 14hs. Sábados de 09 a 11hs"
+        });
+
+
+        //Grupo 800 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.985306, -68.782394),
+            map: _map,
+            title: "Grupo 800. Lunes a Viernes de 09 a 16hs. Sábados de 09 a 11hs"
+        });
+
+        //Grupo 900 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.983628, -68.783356),
+            map: _map,
+            title: "Grupo 900 (calle Perón). Lunes a Viernes de 08 a 15hs"
+        });
+
+        //Grupo 900 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.916991, -68.771449),
+            map: _map,
+            title: "Grupo 900 (calle Castro). Lunes a Viernes de 09 a 12hs. Sábados de 09 a 12hs"
+        });
+
+        //Grupo Terminal de Omnibus 1 Piso (ala oeste). Lunes a Viernes de 09 a 17hs 
+        new google.maps.Marker({
+            position: new google.maps.LatLng(-32.89525, -68.83111111111111),
+            map: _map,
+            title: "Grupo Terminal de Omnibus 1 Piso (ala oeste). Lunes a Viernes de 09 a 17hs "
+        });
+
         _map.setCenter(new google.maps.LatLng(_lat, _lng));
     }
 }
