@@ -206,10 +206,18 @@ function basicmap() {
     });
 
     //Casa de Gobierno 
-    new google.maps.Marker({
+    let cg = new google.maps.Marker({
         position: new google.maps.LatLng(-32.8982778, -68.84636111111111),
         map: _map,
         title: "Ventanilla Única (Casa de Gobierno). Lunes a Viernes de 09 a 15hs."
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+        content: cg.title
+      });
+
+    cg = marker.addListener("click", () => {
+        infowindow.open(_map, cg);
     });
 
     //Grupo 100 (STM) 
@@ -218,6 +226,8 @@ function basicmap() {
         map: _map,
         title: "Grupo 100 (STM). Lunes a Viernes de 09 a 13hs."
     });
+
+    
 
     //Centro Atención en Perú y Rivadavia
     new google.maps.Marker({
