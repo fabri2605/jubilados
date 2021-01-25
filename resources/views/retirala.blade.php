@@ -55,7 +55,8 @@
 		<br>
 		<div class="container marketing">
 		  <div class="row">
-            Ventanilla Única (Casa de Gobierno), lunes a viernes de 9 a 15 hs.
+			<!--
+			Ventanilla Única (Casa de Gobierno), lunes a viernes de 9 a 15 hs.
             •	Centro de Atención en Perú y Rivadavia, lunes a viernes de 9 a 16 hs; sábado de 9 a 12 hs.
             •	Grupo 100 (STM), lunes a viernes de 9 a 13 hs.
             •	Grupo 200, lunes a viernes de 9 a 16 hs; sábado de 9 a 11 hs.
@@ -65,7 +66,7 @@
             •	Grupo 800, lunes a viernes de 9 a 16 hs; sábado de 9 a 11 hs.
             •	Grupo 900 (calle Perón), lunes a viernes de 8 a 15 hs.
             •	Grupo 900 (calle Castro), lunes a viernes de 9 a 12 hs; sábado de 9 a 12 hs.
-            •	Terminal de Ómnibus 1 Piso (ala oeste), lunes a viernes de 9 a 17 hs.
+            •	Terminal de Ómnibus 1 Piso (ala oeste), lunes a viernes de 9 a 17 hs.!-->
           </div>
   
 		  <hr class="featurette-divider">
