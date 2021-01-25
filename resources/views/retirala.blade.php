@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>SUBE MENDOZA</title>
+	<title>RETIRALA SUBE MENDOZA</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/sitio/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
@@ -54,32 +54,18 @@
 		<br>
 		<div class="container marketing">
 		  <div class="row">
-			<div class="col-lg-4">
-				<a href=""{{route('retirala')}}" class="btn btn-lg" role="button" aria-pressed="true">
-					<img src="images/turno.png" class="img-fluid">
-				</a>
-				<br/><br/>
-				<h2>Retirala</h2>
-				<p>Si Ud. quiere gestionar un Abono con Tarjeta SUBE, solicite un turno en el lugar de su convenciencia, haciendo click aqui</p>
-			</div><!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<a href="{{route('particulares')}}" class="btn  btn-lg active" role="button" aria-pressed="true">
-					<img src="images/abono.png" class="img-fluid">
-				</a>
-				<br/><br/>
-				<h2>Abono SUBE</h2>
-				<p>Si Ud. todavia no tiene su Tarjeta SUBE, ,solicitela y sera enviada a su domicilio sin cargo, haciendo click aqui</p>
-			</div><!-- /.col-lg-4 -->
-			<div class="col-lg-4">
-				<a href="{{route('home')}}" class="btn  btn-lg active" role="button" aria-pressed="true">
-					<img src="images/abono.png" class="img-fluid">
-				</a>
-				<br/><br/>
-				<h2>Abono de Jubilado, Mayores de 70 y Discapacidad</h2>
-				<p>Si Ud. es actualmente beneficiario del <b>Abono de Jubilado, Mayores de 70 Años, Discapacidad o Ley 7811</b>, solicite su Tarjeta SUBE y sera enviada a su domicilio, haciendo click aqui</p>
-				
-			</div><!-- /.col-lg-4 -->
-		  </div><!-- /.row -->
+            Ventanilla Única (Casa de Gobierno), lunes a viernes de 9 a 15 hs.
+            •	Centro de Atención en Perú y Rivadavia, lunes a viernes de 9 a 16 hs; sábado de 9 a 12 hs.
+            •	Grupo 100 (STM), lunes a viernes de 9 a 13 hs.
+            •	Grupo 200, lunes a viernes de 9 a 16 hs; sábado de 9 a 11 hs.
+            •	Grupo 300, luneas a viernes de 8 a 16 hs; sábado de 9 a 12 hs.
+            •	Grupo 400, lunes a viernes de 8 a 16 hs; sábado de 9 a 12 hs.
+            •	Grupo 700, lunes a viernes de 8 a 14 hs; sábado de 9 a 11 hs.
+            •	Grupo 800, lunes a viernes de 9 a 16 hs; sábado de 9 a 11 hs.
+            •	Grupo 900 (calle Perón), lunes a viernes de 8 a 15 hs.
+            •	Grupo 900 (calle Castro), lunes a viernes de 9 a 12 hs; sábado de 9 a 12 hs.
+            •	Terminal de Ómnibus 1 Piso (ala oeste), lunes a viernes de 9 a 17 hs.
+          </div>
   
 		  <hr class="featurette-divider">
 		</div><!-- /.container -->
