@@ -232,72 +232,153 @@ function basicmap() {
     });
 
     g100.addListener("click", () => {
-        infowindow.open(_map, cg);
+        infowindow100.open(_map, g100);
     });
     
 
     //Centro Atención en Perú y Rivadavia
-    new google.maps.Marker({
+
+    const infowindowPeru = new google.maps.InfoWindow({
+        content: "<b>Centro Atención en Perú y Rivadavia. </b><br><p>Lunes a Viernes de 09 a 16hs. Sábado de 09 a 12hs</p>"
+      });
+
+    let pr = new google.maps.Marker({
         position: new google.maps.LatLng(-32.8902222, -68.84855555555555),
         map: _map,
         title: "Centro Atención en Perú y Rivadavia. Lunes a Viernes de 09 a 16hs. Sábado de 09 a 12hs"
     });
 
+    pr.addListener("click", () => {
+        infowindowPeru.open(_map, pr);
+    });
+
      //Grupo 200 
-     new google.maps.Marker({
+
+     const infowindow200 = new google.maps.InfoWindow({
+        content: "<b>Grupo 200</b><br><p>Lunes a Viernes de 09 a 16hs. Sábado de 09 a 11hs</p>"
+      });
+
+    let g200 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.93036, -68.746273),
         map: _map,
         title: "Grupo 200. Lunes a Viernes de 09 a 16hs. Sábados de 09 a 11hs"
     });
 
+    g200.addListener("click", () => {
+        infowindow200.open(_map, g200);
+    });
+
     //Grupo 300 
-    new google.maps.Marker({
+
+    const infowindow300 = new google.maps.InfoWindow({
+        content: "<b>Grupo 300. </b><br><p>Lunes a Viernes de 08 a 16hs. Sábado de 09 a 11hs</p>"
+      });
+
+    let g300 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.965223, -68.841457),
         map: _map,
-        title: "Grupo 200. Lunes a Viernes de 08 a 16hs. Sábados de 09 a 11hs"
+        title: "Grupo 300. Lunes a Viernes de 08 a 16hs. Sábados de 09 a 11hs"
+    });
+
+    g300.addListener("click", () => {
+        infowindow300.open(_map, g300);
     });
 
     //Grupo 400 
-    new google.maps.Marker({
+
+    const infowindow400 = new google.maps.InfoWindow({
+        content: "<b>Grupo 400. </b><br><p>Lunes a Viernes de 08 a 16hs. Sábado de 09 a 12hs</p>"
+      });
+
+
+    let g400 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.941877, -68.841679),
         map: _map,
         title: "Grupo 400. Lunes a Viernes de 08 a 16hs. Sábados de 09 a 12hs"
     });
 
+    g400.addListener("click", () => {
+        infowindow400.open(_map, g400);
+    });
+
     //Grupo 700 
-    new google.maps.Marker({
+
+    const infowindow700 = new google.maps.InfoWindow({
+        content: "<b>Grupo 700. </b><br><p>Lunes a Viernes de 08 a 14hs. Sábado de 09 a 11hs</p>"
+      });
+
+
+    let g700 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.968331, -68.849333),
         map: _map,
         title: "Grupo 700. Lunes a Viernes de 08 a 14hs. Sábados de 09 a 11hs"
     });
 
+    g700.addListener("click", () => {
+        infowindow700.open(_map, g700);
+    });
 
     //Grupo 800 
-    new google.maps.Marker({
+
+    const infowindow800 = new google.maps.InfoWindow({
+        content: "<b>Grupo 800. </b><br><p>Lunes a Viernes de 09 a 16hs. Sábado de 09 a 11hs</p>"
+      });
+
+
+    let g800 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.985306, -68.782394),
         map: _map,
         title: "Grupo 800. Lunes a Viernes de 09 a 16hs. Sábados de 09 a 11hs"
     });
 
+    g800.addListener("click", () => {
+        infowindow800.open(_map, g800);
+    });
+
     //Grupo 900 
-    new google.maps.Marker({
+    const infowindow900 = new google.maps.InfoWindow({
+        content: "<b>Grupo 900 (calle Perón)</b><br><p>Lunes a Viernes de 08 a 15hs.</p>"
+      });
+
+    let g900 =  new google.maps.Marker({
         position: new google.maps.LatLng(-32.983628, -68.783356),
         map: _map,
         title: "Grupo 900 (calle Perón). Lunes a Viernes de 08 a 15hs"
     });
 
+    g900.addListener("click", () => {
+        infowindow900.open(_map, g900);
+    });
+
     //Grupo 900 
-    new google.maps.Marker({
+
+    const infowindow9002 = new google.maps.InfoWindow({
+        content: "<b>Grupo 900 (calle Castro)</b><br><p>Lunes a Viernes de 09 a 12hs. Sábados de 09 a 12hs</p>"
+      });
+
+    let g9002 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.916991, -68.771449),
         map: _map,
         title: "Grupo 900 (calle Castro). Lunes a Viernes de 09 a 12hs. Sábados de 09 a 12hs"
     });
 
+    g9002.addListener("click", () => {
+        infowindow9002.open(_map, g9002);
+    });
+
     //Grupo Terminal de Omnibus 1 Piso (ala oeste). Lunes a Viernes de 09 a 17hs 
-    new google.maps.Marker({
+    const infowindowLast = new google.maps.InfoWindow({
+        content: "<b>Grupo Terminal de Omnibus 1 Piso (ala oeste)</b><br><p> Lunes a Viernes de 09 a 17hs</p>"
+      });
+
+    let last = new google.maps.Marker({
         position: new google.maps.LatLng(-32.89525, -68.83111111111111),
         map: _map,
         title: "Grupo Terminal de Omnibus 1 Piso (ala oeste). Lunes a Viernes de 09 a 17hs "
+    });
+
+    last.addListener("click", () => {
+        infowindowLast.open(_map, last);
     });
 
     _map.setCenter(new google.maps.LatLng(_lat, _lng));
