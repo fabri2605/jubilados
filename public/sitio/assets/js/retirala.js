@@ -206,17 +206,17 @@ function basicmap() {
     });
 
     //Casa de Gobierno 
+    const infowindow = new google.maps.InfoWindow({
+        content: "Ventanilla Única (Casa de Gobierno). Lunes a Viernes de 09 a 15hs."
+      });
+
     let cg = new google.maps.Marker({
         position: new google.maps.LatLng(-32.8982778, -68.84636111111111),
         map: _map,
         title: "Ventanilla Única (Casa de Gobierno). Lunes a Viernes de 09 a 15hs."
     });
 
-    const infowindow = new google.maps.InfoWindow({
-        content: cg.title
-      });
-
-    cg = cg.addListener("click", () => {
+    cg.addListener("click", () => {
         infowindow.open(_map, cg);
     });
 
