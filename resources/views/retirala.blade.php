@@ -40,16 +40,17 @@
     		width: 190px;
     		vertical-align: top;
 		}
+		#map {
+			width: 100%;
+			height: 300px !important;
+		}
 	</style>
 </head>
 <body>
 	<main role="main">
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		  <div class="carousel-inner">
-			<div class="carousel-item active ">
-			  <img class="first-slide img-fluid" src="landing/cabecera.png" alt="First slide">
-			</div>
-		  </div>
+		<div class="row">
+			<div id="map"></div>
+		  
 		</div>
 		<br>
 		<div class="container marketing">
@@ -76,6 +77,9 @@
     @include('sweetalert::alert')
     <script src="/sitio/assets/js/jquery-3.3.1.min.js"></script>
     <script src="/sitio/assets/js/jquery.validate.min.js"></script>
-    <script src="/sitio/assets/js/bootstrap.min.js"></script>
+	<script src="/sitio/assets/js/bootstrap.min.js"></script>
+	<script src="/sitio/assets/js/retirala.js"></script>
+	<script src="/js/jquery-confirm.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5y0EF8dE6qwc03FcbXHJfXr4vEa7z54&callback=initMap()"></script>
 	<script src="/js/jquery-confirm.min.js"></script>
 </body>
