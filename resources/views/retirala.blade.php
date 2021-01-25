@@ -41,13 +41,13 @@
 		}
 		#map {
 			width: 100%;
-			height: 800px !important;
+			height: 600px !important;
 		}
 	</style>
 </head>
 <body>
 	<main role="main">
-		<div class="row">
+		<div class="row" style="margin-top: 4px">
 			<div id="map"></div>
 		  
 		</div>
