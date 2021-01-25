@@ -3,10 +3,11 @@ _lat = null;
 _lng = null;
 _map = null;
 _marker = null;
+infoWindow = null;
 
 function basicmap() {
     var mapOptions = {
-        zoom: 12,
+        zoom: 14,
         scrollwheel: false,
         center: new google.maps.LatLng(_lat, _lng), 
         mapTypeControl: false,
@@ -200,9 +201,37 @@ function basicmap() {
     var mapElement = document.getElementById('map');
     _map = new google.maps.Map(mapElement, mapOptions);
 
-    _marker = new google.maps.Marker({
+    /*_marker = new google.maps.Marker({
         position: new google.maps.LatLng(_lat, _lng),
         map: _map,
+    });*/
+
+    infoWindow = new google.maps.InfoWindow();
+    const locationButton = document.createElement("button");
+    locationButton.textContent = "Motrar mi ubicación";
+    locationButton.classList.add("custom-map-control-button");
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    locationButton.addEventListener("click", () => {
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                const pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+                infoWindow.setPosition(pos);
+                infoWindow.setContent("Location found.");
+                infoWindow.open(map);
+                map.setCenter(pos);
+                },
+                () => {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                }
+            );
+        } else {
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
     });
 
     //Casa de Gobierno 
@@ -383,6 +412,16 @@ function basicmap() {
 
     _map.setCenter(new google.maps.LatLng(_lat, _lng));
 }
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Error en Servicio de ubicación "
+        : "Error su navegador no soporta geolocalización"
+    );
+    infoWindow.open(map);
+  }
+
 function initMap(lat,lng){
     _lat = -32.890655;
     _lng = -68.8440078;
