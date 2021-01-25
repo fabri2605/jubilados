@@ -208,7 +208,8 @@ function basicmap() {
 
     infoWindow = new google.maps.InfoWindow();
     const locationButton = document.createElement("button");
-    locationButton.textContent = "Motrar mi ubicación";
+    locationButton.textContent = "Mi Ubicación";
+    locationButton.className = "btn btn-primary"
     locationButton.classList.add("custom-map-control-button");
     _map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
     locationButton.addEventListener("click", () => {
@@ -221,7 +222,7 @@ function basicmap() {
                     lng: position.coords.longitude,
                 };
                 infoWindow.setPosition(pos);
-                infoWindow.setContent("Location found.");
+                infoWindow.setContent("Ubicación encontrada");
                 infoWindow.open(_map);
                 _map.setCenter(pos);
                 },
