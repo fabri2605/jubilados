@@ -80,6 +80,8 @@
 	<script src="/sitio/assets/js/bootstrap.min.js"></script>
 	<script src="/sitio/assets/js/retirala.js"></script>
 	<script src="/js/jquery-confirm.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5y0EF8dE6qwc03FcbXHJfXr4vEa7z54&callback=initMap()"></script>
+	<script defer
+    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5y0EF8dE6qwc03FcbXHJfXr4vEa7z54&callback=initMap">
+	</script>
 	<script src="/js/jquery-confirm.min.js"></script>
 </body>
