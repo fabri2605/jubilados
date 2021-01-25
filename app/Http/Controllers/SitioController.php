@@ -27,6 +27,10 @@ class SitioController extends Controller
         $agent = new Agent();
         return view('inicio');
     }
+    public function retirala(){
+        $agent = new Agent();
+        return view('retirala');
+    }
     public function validarAbono(Request $request){
         $response = array();
 
