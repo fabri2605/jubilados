@@ -210,7 +210,7 @@ function basicmap() {
     const locationButton = document.createElement("button");
     locationButton.textContent = "Motrar mi ubicación";
     locationButton.classList.add("custom-map-control-button");
-    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
+    _map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
     locationButton.addEventListener("click", () => {
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -222,15 +222,15 @@ function basicmap() {
                 };
                 infoWindow.setPosition(pos);
                 infoWindow.setContent("Location found.");
-                infoWindow.open(map);
-                map.setCenter(pos);
+                infoWindow.open(_map);
+                _map.setCenter(pos);
                 },
                 () => {
-                    handleLocationError(true, infoWindow, map.getCenter());
+                    handleLocationError(true, infoWindow, _map.getCenter());
                 }
             );
         } else {
-            handleLocationError(false, infoWindow, map.getCenter());
+            handleLocationError(false, infoWindow, _map.getCenter());
         }
     });
 
