@@ -55,7 +55,7 @@
 		<div class="container marketing">
 		  <div class="row">
 			<div class="col-lg-4">
-				<a href=""{{route('retirala')}}" class="btn btn-lg" role="button" aria-pressed="true">
+				<a href="{{route('retirala')}}" class="btn btn-lg" role="button" aria-pressed="true">
 					<img src="images/turno.png" class="img-fluid">
 				</a>
 				<br/><br/>
