@@ -41,7 +41,7 @@
 		}
 		#map {
 			width: 100%;
-			height: 300px !important;
+			height: 800px !important;
 		}
 	</style>
 </head>
