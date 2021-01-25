@@ -216,7 +216,7 @@ function basicmap() {
         content: cg.title
       });
 
-    cg = marker.addListener("click", () => {
+    cg = cg.addListener("click", () => {
         infowindow.open(_map, cg);
     });
 
