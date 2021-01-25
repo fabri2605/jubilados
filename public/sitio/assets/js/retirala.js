@@ -207,7 +207,7 @@ function basicmap() {
 
     //Casa de Gobierno 
     const infowindow = new google.maps.InfoWindow({
-        content: "Ventanilla Única (Casa de Gobierno). Lunes a Viernes de 09 a 15hs."
+        content: "<b>Ventanilla Única (Casa de Gobierno).</b><br><p>Lunes a Viernes de 09 a 15hs.</p>"
       });
 
     let cg = new google.maps.Marker({
@@ -221,12 +221,19 @@ function basicmap() {
     });
 
     //Grupo 100 (STM) 
-    new google.maps.Marker({
+    const infowindow100 = new google.maps.InfoWindow({
+        content: "<b>Grupo 100 (STM).</b><br><p>Lunes a Viernes de 09 a 13hs.</p>"
+      });
+
+    let g100 = new google.maps.Marker({
         position: new google.maps.LatLng(-32.873294, -68.844357),
         map: _map,
         title: "Grupo 100 (STM). Lunes a Viernes de 09 a 13hs."
     });
 
+    g100.addListener("click", () => {
+        infowindow.open(_map, cg);
+    });
     
 
     //Centro Atención en Perú y Rivadavia
