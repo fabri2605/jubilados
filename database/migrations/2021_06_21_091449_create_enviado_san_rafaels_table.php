@@ -15,7 +15,7 @@ class CreateEnviadoSanRafaelsTable extends Migration
     {
         Schema::create('enviado_san_rafaels', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('documento')->nullable(true);
         });
     }
 
