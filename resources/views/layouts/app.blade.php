@@ -182,6 +182,18 @@
                                             <span class="hide-menu">Registros Enviados </span>
                                         </a>
                                     </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('solicitudes_san_rafael.index')}}" aria-expanded="false">
+                                            <i class="mdi mdi-comment-question-outline"></i>
+                                            <span class="hide-menu">Solicitudes San Rafael </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('enviados.index')}}" aria-expanded="false">
+                                            <i class="mdi mdi-cloud-upload"></i>
+                                            <span class="hide-menu">Enviados San Rafael </span>
+                                        </a>
+                                    </li>
                                 @endif
                                 @if(Auth::user()->hasRoles(['admin']))
                                     <li class="sidebar-item sitem">

@@ -34,3 +34,9 @@ Route::group(['prefix' => 'enviados'], function () {
     Route::get('/', 'EnviadoController@index')->name('enviados.index');
     Route::post('importar/','EnviadoController@importar')->name('enviados.upload');
 });  
+
+
+Route::group(['prefix' => 'enviados'], function () {
+    Route::get('/', 'EnviadoController@index')->name('enviados.index');
+    Route::post('importar/','EnviadoController@importar')->name('enviados.upload');
+});  
