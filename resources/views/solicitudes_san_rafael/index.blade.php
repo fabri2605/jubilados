@@ -7,8 +7,8 @@
         <div class="col-12">
             <div class="card">
                 <div class="container-fluid">
-                    @include('solicitudes.modal')
-                    @include('solicitudes.table')    
+                    @include('solicitudes_san_rafael.modal')
+                    @include('solicitudes_san_rafael.table')    
                 </div>
             </div>
         </div>
