@@ -21,7 +21,7 @@ class EnviadoSanRafaelController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $model = EnviadoSanRafael::query(DB::table('enviado_san_rafaels'))->orderBy('enviado_san_rafael.documento', 'asc');
+            $model = EnviadoSanRafael::query(DB::table('enviado_san_rafaels'))->orderBy('enviado_san_rafaels.documento', 'asc');
             return DataTables::eloquent($model)
                 ->toJson();
         }
