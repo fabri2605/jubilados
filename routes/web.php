@@ -7,7 +7,7 @@ Route::get('/', 'SitioController@landing')->name('inicio');
 Route::get('/sanrafael', 'SitioController@landingSR')->name('inicio_sanrafael');
 
 Route::get('/particulares', 'SitioController@particulares')->name('particulares');
-Route::get('/sanrafael', 'SitioController@sanrafael')->name('sanrafael');
+Route::get('/sanrafael/solicitud', 'SitioController@sanrafael')->name('sanrafael');
 Route::get('/inicio', 'SitioController@sitio')->name('home');
 Route::get('/retira', 'SitioController@retirala')->name('retirala');
 Route::get('/home', 'HomeController@index')->name('menu');
