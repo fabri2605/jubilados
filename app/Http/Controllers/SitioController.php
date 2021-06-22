@@ -210,10 +210,10 @@ class SitioController extends Controller
             $solicitud->update();
             
             alert()->success('Información','Se ha registrado la solicitud con el Nro de Solicitud '.$solicitud->nro_solicitud);
-            return redirect()->route('home')->with('message', 'Se ha registrado la solicitud con el Nro de Solicitud '.$solicitud->tipo_abono);
+            return redirect()->route('sanrafael')->with('message', 'Se ha registrado la solicitud con el Nro de Solicitud '.$solicitud->tipo_abono);
         }else{
             alert()->success('Información','Ya se encuentra una solicitud pendiente con CUIL del solicitante');
-            return redirect()->route('home')->withInput($request->all());
+            return redirect()->route('sanrafael')->withInput($request->all());
         }
     }
     public function validarCuit($cuit){
