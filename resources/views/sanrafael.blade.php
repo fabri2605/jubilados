@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="/sitio/assets/css/fontawesome-all.css">
 	<link rel="stylesheet" href="/sitio/assets/css/style.css">
 
-	<link rel="stylesheet" type="text/css" href="sitio/assets/css/colors/switch.css">
+	<link rel="stylesheet" type="text/css" href="/sitio/assets/css/colors/switch.css">
 	<!-- Color Alternatives -->
 	<link href="/sitio/assets/css/colors/color-2.css" rel="alternate stylesheet" type="text/css" title="color-2">
 	<link href="/sitio/assets/css/colors/color-3.css" rel="alternate stylesheet" type="text/css" title="color-3">
@@ -33,8 +33,8 @@
 	<div class="wrapper">
 		<div class="steps-area steps-area-fixed">
 			<div class="image-holder">
-				<img class="d-none d-sm-block" src="sitio/assets/img/side-img.png" alt="">
-				<img class="d-block d-sm-none" src="sitio/assets/img/side-img-mobile.png" alt="">
+				<img class="d-none d-sm-block" src="/sitio/assets/img/side-img.png" alt="">
+				<img class="d-block d-sm-none" src="/sitio/assets/img/side-img-mobile.png" alt="">
 			</div>
 			<div class="steps clearfix">
 				<ul class="tablist multisteps-form__progress">
@@ -81,7 +81,7 @@
 
                                     <div align="center">
                                         <div class="col-6">
-                                            <img src="sitio/images/dni-tramite.png" class="img-fluid">
+                                            <img src="/sitio/images/dni-tramite.png" class="img-fluid">
                                         </div>
 									</div>
 									
