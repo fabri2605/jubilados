@@ -189,7 +189,7 @@
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('enviados.index')}}" aria-expanded="false">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('enviado_san_rafael.index')}}" aria-expanded="false">
                                             <i class="mdi mdi-cloud-upload"></i>
                                             <span class="hide-menu">Enviados San Rafael </span>
                                         </a>
