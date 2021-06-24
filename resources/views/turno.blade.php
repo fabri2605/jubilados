@@ -223,7 +223,7 @@
                     let value = $('#cbLocalidad').val();
                     if(value){
                         let url = '/sitio/obtener/oficinas/'
-                        $.ajax( url )
+                        $.ajax( {url: url, type: "POST"} )
                             .done(function(result) {
                                 if(result.status == 'success'){
                                     var option = new Option('Seleccione una oficina', '-1');
