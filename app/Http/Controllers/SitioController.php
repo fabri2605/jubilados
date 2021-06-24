@@ -446,8 +446,8 @@ class SitioController extends Controller
 
 
     }
-
     public function registrarTurno(Request $request){
+        return $request;
         if($request->get("fechaTurno") && $request->get("hora_turno")){
             alert()->error('Aviso!!', 'Debe seleccionar una fecha y horario disponible');
             return redirect()->back()->withInput($request->all());
