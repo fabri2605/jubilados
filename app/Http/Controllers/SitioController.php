@@ -465,7 +465,7 @@ class SitioController extends Controller
         }
         
         $diaSeleccionado = Carbon::createFromFormat('Y-m-d', $request->get("fechaTurno"));
-        $horaTurno = $request->get("horaTurno");
+        $horaTurno = $request->get("hora_turno");
         $detallesAgenda = OficinaAgendaDetalle::select("fecha_inicio", "fecha_fin","cantidad_turnos", 
                                                             "cantidad_turnos_tarde","dia_semana","oficina_agenda_id",
                                                             "hora_inicio", "hora_fin","hora_inicio_tarde","hora_fin_tarde")
