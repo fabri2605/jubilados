@@ -151,11 +151,10 @@
                 </div>
             </div>
         </div>
-       <script src="/js/jquery-3.4.1.min.js"></script>
-       <!--<script src="/js/bootstrap.min.js"></script>!-->
-       <script src="/js/mdb.min.js"></script>
-       <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>\
-       <script defer src="/js/jquery-confirm.min.js"></script>
+       <script src="/libs/jquery.min.js" ></script>
+       <script src="/js/popper.min.js" ></script>
+       <script src="/js/bootstrap.min.js" ></script>
+       <script src="/js/jquery-confirm.min.js"></script>
        <script src="/js/messages.js"></script> 
        <script src="/js/select2.min.js"></script>
        <script src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap" async defer></script>
