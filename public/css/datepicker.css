@@ -1,0 +1,102 @@
+.fecha-solicitud .ui-datepicker-inline {
+  background-color: #007ABD;
+  padding: 30px 20px 25px 20px;
+  border-radius: 20px;
+  font-family: "Roboto";
+  margin-bottom: 35px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header {
+  color: #606060;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-next, .fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-prev {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 5px;
+  color: #C8C8C8;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-next:hover, .fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-prev:hover {
+  color: #606060;
+  background-color: transparent;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-prev {
+  order: 0;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-next {
+  order: 3;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-next-hover {
+  border: none;
+  right: 2px !important;
+  top: 2px !important;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-header a.ui-datepicker-prev-hover {
+  border: none;
+  left: 2px !important;
+  top: 2px !important;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar {
+  margin-top: 20px;
+  width: 100%;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar thead {
+  color: #fff;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td {
+  padding: 3px !important;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td a, .fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td span {
+  border-radius: 5px;
+  border: none;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td a.ui-state-default {
+  color: #606060;
+  background-color: #fff;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td a.ui-state-default.ui-state-active {
+  background-color: #00c851;
+  color: #fff;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td.ui-datepicker-unselectable.ui-state-disabled {
+  opacity: 1;
+}
+.fecha-solicitud .ui-datepicker-inline .ui-datepicker-calendar tbody tr td.ui-datepicker-unselectable.ui-state-disabled .ui-state-default {
+  color: #fff;
+  background-color: #C8C8C8;
+}
+.fecha-solicitud .leyenda {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Roboto";
+  color: #606060;
+}
+.fecha-solicitud .leyenda span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-left: 2px;
+  margin-right: 8px;
+  border: 1px solid #C8C8C8;
+}
+.fecha-solicitud .leyenda span:nth-of-type(1) {
+  background-color: #fff;
+}
+.fecha-solicitud .leyenda span:nth-of-type(2) {
+  background-color: #C8C8C8;
+}
+.fecha-solicitud .leyenda span:nth-of-type(3) {
+  border: none;
+  background-color: #00c851;
+}

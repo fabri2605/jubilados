@@ -30,6 +30,9 @@ Route::group(['prefix' => 'sitio'], function () {
     Route::post('/registrar/abono/particulares/sanrafael', 'SitioController@registrarParticularSanRafael')->name('sitio.abono_registro_san_rafael');
     //TURNOS
     Route::post('/obtener/oficinas', 'SitioController@obtenerOficinasXLocalidad')->name('sitio.turnos_obtener_oficinas');
+    Route::post('/obtener/dias/especiales', 'SitioController@diasEspeciales')->name('sitio.diasEspeciales');
+    Route::post('/obtener/dias/disponibles', 'SitioController@diasDisponibles')->name('sitio.diasDisponibles');
+    Route::post('/obtener/horarios/dia', 'SitioController@horariosDia')->name('sitio.diasDisponibles');
 });  
 
 Route::group(['prefix' => 'solicitudes'], function () {

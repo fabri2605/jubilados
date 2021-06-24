@@ -258,7 +258,7 @@ class SitioController extends Controller
                     ->where("visibilidad_web", 1)
                     ->orderBy("denominacion", "asc")
                     ->get();
-                    
+
         if(!$oficinas){
             $response['status'] = 'error';
             $response['data'] = 'nodata';
@@ -268,5 +268,171 @@ class SitioController extends Controller
         $response['status'] = 'success';
         $response['data'] = $oficinas;
         return $response;
+    }
+
+    public function diasEspeciales(){
+        $especiales = DiaEspecial::select('fecha')->whereDate('fecha', ">=", Carbon::now())->get();
+        $response = array();
+        foreach($especiales as $item){
+            array_push($response, $item->fecha);
+        }
+        return response()->json($response);
+    }
+
+    public function diasDisponibles(Request $request){
+        $response = array();
+        $tramites = DB::table('oficinas')
+            ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
+            ->select('oficina_agendas.id')
+            ->where('oficinas.visibilidad_web', '=', 1)
+            ->where('oficinas.id', '=', $request->get('oficina'))
+            ->get();
+
+        $agendas_id = collect();
+        foreach($tramites as $item){
+            $agendas_id->push($item->id);
+        }
+
+        
+        //Obtengo todos los dias disponibles de acuerdo al tipo de oficina
+        $today = Carbon::now()->startOfDay();
+        $detallesAgenda = OficinaAgendaDetalle::select("fecha_inicio", "fecha_fin","cantidad_turnos", "cantidad_turnos_tarde","dia_semana")
+                                                  ->whereDate('fecha_fin', '>=', $today)
+                                                  ->whereIn('oficina_agenda_id',$agendas_id )
+                                                  ->get();
+
+        $rangos = collect();
+        
+        foreach($detallesAgenda as $item){
+            $period = CarbonPeriod::create(Carbon::parse($item->fecha_inicio)->format('d-m-Y'),Carbon::parse($item->fecha_fin)->format('d-m-Y'));
+            foreach($period as $date){
+                if($date->gte($today)){
+                    //verifico dia habil
+                    if($date->dayOfWeek != Carbon::SUNDAY && $date->dayOfWeek != Carbon::SATURDAY){
+                        $rangos->push($date->format('Y-m-d'));
+                    }
+                }
+            }
+        }
+
+        $unicos = $rangos->unique();
+        $listadoDisponibles = collect();
+
+        //Por cada día si hay disponibilidad
+        foreach($unicos as $item){
+            $diaIterado = Carbon::createFromFormat('Y-m-d', $item);
+            $otorgados =Turno::select('id')
+                 ->whereDate('fecha_turno', '=', $diaIterado)
+                 ->where('estado', '!=', 'RECHAZADO')
+                 ->where('estado', '!=', 'PREVIO')
+                 ->whereIn('oficina_id',$agendas_id)->count();
+
+            $cantidad = 0;
+            $cantidadAgendas = count($agendas_id);
+            foreach($detallesAgenda as $detalle){
+                if($detalle->dia_semana == $diaIterado->dayOfWeek){
+                    $cantidad+=($detalle->cantidad_turnos+$detalle->cantidad_turnos_tarde);
+                    $cantidadAgendas--;
+                    /*if($diaIterado->toDateString() == '2021-03-19')
+                        dd($diaIterado->toDateString(),$cantidad, $otorgados, $detalle);*/
+                    if($cantidad == 0)
+                        break;
+                }
+            }
+           
+            if($cantidad > $otorgados && !($cantidad == $otorgados)){
+                $listadoDisponibles->push($item);
+            }
+        }
+        
+        return $listadoDisponibles;
+    }
+
+    public function horariosDia(Request $request){
+        $tipo =  $request->get('oficina');
+        $listado = collect();
+        if($request->get("fecha_turno")){
+            $tramites = DB::table('oficinas')
+            ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
+            ->select('oficina_agendas.id')
+            ->where('oficinas.visibilidad_web', '=', 1)
+            ->where('oficinas.id', '=', $tipo)
+            ->get();
+
+            $agendas_id = collect();
+            $detallesAgenda = collect();
+            foreach($tramites as $item){
+                $agendas_id->push($item->id);
+            }
+            
+            $diaSeleccionado = Carbon::createFromFormat('Y-m-d', $request->get("fecha_turno"));
+
+            $detallesAgenda = OficinaAgendaDetalle::select("fecha_inicio", "fecha_fin","cantidad_turnos", 
+                                                                "cantidad_turnos_tarde","dia_semana",
+                                                                "hora_inicio", "hora_fin","hora_inicio_tarde","hora_fin_tarde")
+                                                  ->where('dia_semana', '>=', $diaSeleccionado->dayOfWeek)
+                                                  ->whereDate('fecha_fin', '>=', $diaSeleccionado)
+                                                  ->whereIn('oficina_agenda_id',$agendas_id )
+                                                  ->get();
+            $otorgados =Turno::select('id')
+                 ->whereDate('fecha_turno', '=', $diaSeleccionado)
+                 ->where('estado', '!=', 'RECHAZADO')
+                 ->where('estado', '!=', 'PREVIO')
+                 ->whereIn('oficina_id',$agendas_id)->count();
+            
+                        
+            $cantidad = 0;
+            $detallesInvolucrados = collect();
+            foreach($detallesAgenda as $detalle){
+                $cantidad+=($detalle->cantidad_turnos+$detalle->cantidad_turnos_tarde);
+            }
+            if($cantidad > $otorgados){
+                $horariosDisponibles = collect();
+                $horariosNoDisponibles = collect();
+                foreach($detallesAgenda as $det){
+                    if($det->cantidad_turnos > 0){
+                        $inicio = new Carbon(strval($diaSeleccionado->toDateString().' '.$det->hora_inicio));
+                        $fin = new Carbon(strval($diaSeleccionado->toDateString().' '.$det->hora_fin));
+                        $minutos = $inicio->diffInMinutes($fin);
+
+                        
+                        $calculo = 0;
+                        $calculo = intval($minutos/$det->cantidad_turnos);
+                        while($inicio->lt($fin)){
+                            $horariosDisponibles->push($inicio->toTimeString());
+                            $inicio->addMinutes($calculo);
+                        }
+                        $horariosDisponibles->push($fin->toTimeString());
+                    }
+                    if($det->cantidad_turnos_tarde > 0){
+                        $inicio_tarde = new Carbon(strval($diaSeleccionado->toDateString().' '.$det->hora_inicio_tarde));
+                        $fin_tarde = new Carbon(strval($diaSeleccionado->toDateString().' '.$det->hora_fin_tarde));
+                        $minutos_tarde = $inicio_tarde->diffInMinutes($fin_tarde);
+                        
+                        $calculo_tarde = intval($minutos_tarde/$det->cantidad_turnos_tarde);
+
+                        while($inicio_tarde->lt($fin_tarde)){
+                            $horariosDisponibles->push($inicio_tarde->toTimeString());
+                            $inicio_tarde->addMinutes($calculo_tarde);
+                        }
+                        $horariosDisponibles->push($fin_tarde->toTimeString());
+                    }
+                    $turnos_otorgados = Turno::select('hora_turno')->where('fecha_turno','=',$diaSeleccionado->toDateString())
+                                                    ->where('estado','!=','RECHAZADO')
+                                                    ->where('estado', '!=', 'PREVIO')
+                                                    ->whereIn('oficina_id',$agendas_id)
+                                                    ->whereIn('hora_turno',$horariosDisponibles)
+                                                    ->get();
+                    
+                    foreach($turnos_otorgados as $item){
+                        $horariosNoDisponibles->push( $item->hora_turno);
+                    }
+                   
+                }
+                $turnosDisponibles = $horariosDisponibles->diff($horariosNoDisponibles);
+                $listado = $turnosDisponibles->unique();
+            }
+        }
+        return $listado;
     }
 }

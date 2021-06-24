@@ -9,6 +9,7 @@
         <!--<link href="/css/bootstrap.css" rel="stylesheet">!-->
         <link rel="stylesheet" href="/site/css/bootstrap.min.css">
         <link href="/css/mdb.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/datepicker.css">
         <link rel="stylesheet" href="/css/jquery-confirm.min.css">
         <link rel="stylesheet" type="text/css" href="/css/select2.min.css">
     </head>
@@ -95,9 +96,17 @@
                                                 <input type="number" class="form-control" id="txtCelular" name="celular" value="{{old('celular')}}" >
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <label for="Nombre ">* Fecha</label>
-                                                <p>Seleccione la fecha en que desea retirar su tarjeta para consultar disponibilidad</p>
-                                                <input type="date" name="fecha_turno" class="form-control" id="dfFecha" value="{{(old('fecha_turno') ? old('fecha_turno') : \Carbon\Carbon::now()->toDateString()) }}">
+                                                <h3 class="main_question"><strong></strong>Día :</h3>
+                                                <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-03-19">
+                                                <div class="form-group fecha-solicitud">
+                                                    <div id="fechaPicker"></div>
+                                                    <hr>
+                                                    <p class="leyenda">
+                                                        Disponible <span></span>
+                                                        No disponible <span></span>
+                                                        Seleccionado <span></span>
+                                                    </p>
+                                                </div>
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="Nombre ">* Horarios</label>
@@ -157,6 +166,8 @@
        <script src="/js/jquery-confirm.min.js"></script>
        <script src="/js/messages.js"></script> 
        <script src="/js/select2.min.js"></script>
+       <script type="text/javascript" src="/js/front/horarios.min.js?v=12"></script>
+       <script type="text/javascript" src="/js/libs/jquery-ui.min.js"></script>
        <script src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap" async defer></script>
        <script>
            var map;
@@ -223,7 +234,7 @@
                     let value = $('#cbLocalidad').val();
                     if(value){
                         let url = '/sitio/obtener/oficinas/'
-                        $.ajax( {url: url, type: "POST"} )
+                        $.ajax( {url: url, type: "POST", data: {localidad: value}} )
                             .done(function(result) {
                                 if(result.status == 'success'){
                                     var option = new Option('Seleccione una oficina', '-1');
