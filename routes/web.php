@@ -11,6 +11,7 @@ Route::get('/sanrafael/solicitud', 'SitioController@sanrafael')->name('sanrafael
 Route::get('/inicio', 'SitioController@sitio')->name('home');
 Route::get('/retira', 'SitioController@retirala')->name('retirala');
 Route::get('/home', 'HomeController@index')->name('menu');
+Route::get('/turno', 'SitioController@turno')->name('turno');
 
 Route::resource('users', 'UserController');
 Route::resource('solicitudes', 'SolicitudController');
@@ -27,6 +28,8 @@ Route::group(['prefix' => 'sitio'], function () {
     Route::post('/registrar/abono/particulares', 'SitioController@registrarParticular')->name('sitio.abono_registro');
     Route::post('/registrar', 'SitioController@registrar')->name('sitio.registrar');
     Route::post('/registrar/abono/particulares/sanrafael', 'SitioController@registrarParticularSanRafael')->name('sitio.abono_registro_san_rafael');
+    //TURNOS
+    Route::post('/obtener/oficinas', 'SitioController@obtenerOficinasXLocalidad')->name('sitio.turnos_obtener_oficinas');
 });  
 
 Route::group(['prefix' => 'solicitudes'], function () {

@@ -8,6 +8,9 @@ use App\Abono;
 use App\Enviado;
 use App\EnviadoSanRafael;
 use App\Solicitud;
+use App\Oficina;
+use App\DiaEspecial;
+use App\Turno;
 use App\SolicitudSanRafael;
 use Carbon\Carbon;
 use Mail;
@@ -20,6 +23,10 @@ class SitioController extends Controller
     public function sitio(){
         $agent = new Agent();
         return view('welcome');
+    }
+    public function turno(){
+        $agent = new Agent();
+        return view('turno');
     }
     public function particulares(){
         $agent = new Agent();
@@ -240,5 +247,26 @@ class SitioController extends Controller
 		$rv = $resultado == $verificador;
 		return $rv;
 	}
-    
+
+
+    // ACA VA LO DE TURNOS
+
+    public function obtenerOficinasXLocalidad(Request $request){
+        $response = array();
+        $oficinas = Oficina::select('id', "denominacion", "lat", "lng")
+                    ->where("localidad", $request->get("localidad"))
+                    ->where("visibilidad_web", 1)
+                    ->orderBy("denominacion", "asc")
+                    ->get();
+                    
+        if(!$oficinas){
+            $response['status'] = 'error';
+            $response['data'] = 'nodata';
+            $response['msg'] = 'No hay oficinas disponibles';
+            return $response;
+        }
+        $response['status'] = 'success';
+        $response['data'] = $oficinas;
+        return $response;
+    }
 }
