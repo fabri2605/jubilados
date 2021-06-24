@@ -41,6 +41,7 @@
                                 <strong>{!! \Session::get('success') !!}</strong>
                             </div>
                         @endif
+                        @include('sweetalert::alert')
                         <div class="col-md-2 center-block"></div>
                         <div class="col-md-8 center-block">
                             <div class="panel panel-primary">
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="panel-body">
                                    
-                                    <form role="form" method="POST"  >
+                                    <form role="form"  method="POST" action="{{ route('sitio.registrar_turno') }}"  >
                                         @csrf
                                         <div class="row">
                                               <div class="form-group col-md-6">

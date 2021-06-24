@@ -33,6 +33,8 @@ Route::group(['prefix' => 'sitio'], function () {
     Route::post('/obtener/dias/especiales', 'SitioController@diasEspeciales')->name('sitio.diasEspeciales');
     Route::post('/obtener/dias/disponibles', 'SitioController@diasDisponibles')->name('sitio.diasDisponibles');
     Route::post('/obtener/horarios/dia', 'SitioController@horariosDia')->name('sitio.diasDisponibles');
+
+    Route::post('/registrarTurno', 'SitioController@registrarTurno')->name('sitio.registrar_turno');
 });  
 
 Route::group(['prefix' => 'solicitudes'], function () {

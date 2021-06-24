@@ -18,6 +18,7 @@ use Mail;
 use Alert;
 use Jenssegers\Agent\Agent;
 use Carbon\CarbonPeriod;
+use Illuminate\Support\Facades\Session;
 use DB;
 
 class SitioController extends Controller
@@ -29,6 +30,11 @@ class SitioController extends Controller
     }
     public function turno(){
         $agent = new Agent();
+        $turno = Session::get('turno');
+        if(empty($turno)){
+            $turno = (new Turno);
+            Session::put('turno',$turno);
+        }
         return view('turno');
     }
     public function particulares(){
@@ -284,7 +290,7 @@ class SitioController extends Controller
 
     public function diasDisponibles(Request $request){
         $response = array();
-        $tramites = DB::table('oficinas')
+        $oficinas = DB::table('oficinas')
             ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
             ->select('oficina_agendas.id')
             ->where('oficinas.visibilidad_web', '=', 1)
@@ -292,7 +298,7 @@ class SitioController extends Controller
             ->get();
 
         $agendas_id = collect();
-        foreach($tramites as $item){
+        foreach($oficinas as $item){
             $agendas_id->push($item->id);
         }
 
@@ -355,7 +361,7 @@ class SitioController extends Controller
         $tipo =  $request->get('oficina');
         $listado = collect();
         if($request->get("fecha_turno")){
-            $tramites = DB::table('oficinas')
+            $oficinas = DB::table('oficinas')
             ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
             ->select('oficina_agendas.id')
             ->where('oficinas.visibilidad_web', '=', 1)
@@ -364,7 +370,7 @@ class SitioController extends Controller
 
             $agendas_id = collect();
             $detallesAgenda = collect();
-            foreach($tramites as $item){
+            foreach($oficinas as $item){
                 $agendas_id->push($item->id);
             }
             
@@ -437,5 +443,78 @@ class SitioController extends Controller
             }
         }
         return $listado;
+
+
+    }
+
+    public function registrarTurno(Request $request){
+        if($request->get("fechaTurno") && $request->get("hora_turno")){
+            alert()->error('Aviso!!', 'Debe seleccionar una fecha y horario disponible');
+            return redirect()->back()->withInput($request->all());
+        }
+        $oficinas = DB::table('oficinas')
+        ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
+        ->select('oficina_agendas.id')
+        ->where('oficinas.visibilidad_web', '=', 1)
+        ->get();
+
+        $agendas_id = collect();
+        $detallesAgenda = collect();
+        foreach($oficinas as $item){
+            $agendas_id->push($item->id);
+        }
+        
+        $diaSeleccionado = Carbon::createFromFormat('Y-m-d', $request->get("fechaTurno"));
+        $horaTurno = $request->get("horaTurno");
+        $detallesAgenda = OficinaAgendaDetalle::select("fecha_inicio", "fecha_fin","cantidad_turnos", 
+                                                            "cantidad_turnos_tarde","dia_semana","oficina_agenda_id",
+                                                            "hora_inicio", "hora_fin","hora_inicio_tarde","hora_fin_tarde")
+                                                ->where('dia_semana', '>=', $diaSeleccionado->dayOfWeek)
+                                                ->whereDate('fecha_fin', '>=', $diaSeleccionado)
+                                                ->whereIn('oficina_agenda_id',$agendas_id )
+                                                ->get();
+        $otorgados = Turno::select('id')
+                ->whereDate('fecha_turno', '=', $diaSeleccionado)
+                ->where('hora_turno', '=', $horaTurno)
+                ->where('estado', '!=', 'RECHAZADO')
+                ->where('estado', '!=', 'PREVIO')
+                ->whereIn('oficina_id',$agendas_id)->count();
+
+        $cantidadTotal = 0;
+        if(count($detallesAgenda) <= $otorgados){
+            alert()->error('Aviso!!', 'El horario y fecha seleccionado ha dejado de estar disponible');
+            return redirect()->back()->withInput($request->all());
+        }
+        $saved = false;
+        foreach($detallesAgenda as $detalle){
+            $valido = Turno::select('id')
+            ->whereDate('fecha_turno', '=', $diaSeleccionado)
+            ->where('hora_turno', '=', $horaTurno)
+            ->where('estado', '!=', 'RECHAZADO')
+            ->where('estado', '!=', 'PREVIO')
+            ->where('oficina_id','=', $detalle->oficina_agenda_id)->count();
+
+            if(!($valido > 0)){
+                $turno = Session::get('turno');
+                $turno->fill($request->all());
+                $turno->fecha_turno = $diaSeleccionado;
+                $turno->hora_turno = $horaTurno;
+                $turno->oficina_id = $detalle->oficina_agenda_id;
+                $turno->estado = "PENDIENTE";
+                $turno->save();
+                
+                $turno->nro_turno = 'TL-'.(1000+$turno->id);
+                $turno->update();
+                Session::put('turno',$turno);
+
+                $saved = true;
+                break;
+            }else{
+                break;
+            }            
+        }
+        if($saved){
+            alert()->success('Información','Se he registrado su turno con el número '. $turno->nro_turno. '. Para el día '. $request->get("fechaTurno"). ' a las '. $request->get("hora_turno"). 'hs' );
+        }
     }
 }
