@@ -71,7 +71,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                     <label for="Nombre ">* Oficina</label>
-                                                    <select name="oficina_id" class="form-control select2 custom-select" id="cbOficina">
+                                                    <select name="oficina_id" class="form-control select2 custom-select" id="cbOficina" required>
                                                     </select>
                                             </div>
                                             <div class="form-group col-md-6">
@@ -197,7 +197,7 @@
                       buscarDisponibilidad();
                     }
                 });
-                $('#cbOficina').change();
+               // $('#cbOficina').change();
 
                 $('#cbLocalidad').on('change', function(){
                     $('#cbOficina').empty();
@@ -207,7 +207,7 @@
                         $.ajax( {url: url, type: "POST", data: {localidad: value}} )
                             .done(function(result) {
                                 if(result.status == 'success'){
-                                    var option = new Option('Seleccione una oficina', '-1');
+                                    var option = new Option('Seleccione una oficina', '');
                                     $('#cbOficina').append(option);
 
                                     result.data.forEach(element => {
