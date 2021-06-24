@@ -274,6 +274,7 @@
     <script>
             $(document).ready(function() {
                  $('.dataTable').DataTable( {
+                        retrieve: true,
                         lengthMenu: [ 50,100,150,200 ],
                        "language": {
                            "lengthMenu": "_MENU_ por página",
