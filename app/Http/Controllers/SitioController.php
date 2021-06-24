@@ -456,6 +456,7 @@ class SitioController extends Controller
         ->join('oficina_agendas', 'oficinas.id', '=', 'oficina_agendas.oficina_id')
         ->select('oficina_agendas.id')
         ->where('oficinas.visibilidad_web', '=', 1)
+        ->where('oficinas.id', '=', $request->get('oficina'))
         ->get();
 
         $agendas_id = collect();
