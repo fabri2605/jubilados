@@ -16,6 +16,7 @@ use Carbon\Carbon;
 use Mail;
 use Alert;
 use Jenssegers\Agent\Agent;
+use DB;
 
 class SitioController extends Controller
 {
