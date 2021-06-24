@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="col-sm-1">
-            <select name="localidad" id="cbLocalidad" class="combo form-control custom-select js-example-responsive">
+            <select name="localidad" id="cbLocalidad" style="width: 250px" class="combo form-control custom-select js-example-responsive">
                 <option value="Gran Mendoza" @if($oficina->localidad == "Gran Mendoza") selected @endif>Gran Mendoza</option>
                 <option value="San Rafael" @if($oficina->localidad == "San Rafael") selected @endif>San Rafael</option>
             </select>
@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="col-sm-1">
-            <select name="visibilidad_web" id="cbVisibilidadWeb" class="combo form-control custom-select js-example-responsive">
+            <select name="visibilidad_web" id="cbVisibilidadWeb" style="width: 250px" class="combo form-control custom-select js-example-responsive">
                 <option value="1" @if($oficina->visibilidad_web == 1) selected @endif>Sí</option>
                 <option value="0" @if($oficina->visibilidad_web == 0) selected @endif>No</option>
             </select>
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="col-sm-1">
-            <select name="aplica_restriccion" id="cbRestriccion" class="combo form-control custom-select js-example-responsive">
+            <select name="aplica_restriccion" id="cbRestriccion" style="width: 250px" class="combo form-control custom-select js-example-responsive">
                 <option value="1" @if($oficina->aplica_restriccion == 1) selected @endif>Sí</option>
                 <option value="0" @if($oficina->aplica_restriccion == 0) selected @endif>No</option>
             </select>
