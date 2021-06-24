@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Role;
 use App\Abono;
 use App\Enviado;
+use App\OficinaAgendaDetalle;
 use App\EnviadoSanRafael;
 use App\Solicitud;
 use App\Oficina;

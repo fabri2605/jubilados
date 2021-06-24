@@ -95,9 +95,9 @@
                                                 <label for="Documento "> Celular</label>
                                                 <input type="number" class="form-control" id="txtCelular" name="celular" value="{{old('celular')}}" >
                                             </div>
-                                            <div class="form-group col-md-12">
+                                            <div class="form-group col-md-12" style="width: 60%;margin: 0 auto;">
                                                 <h3 class="main_question"><strong></strong>Día :</h3>
-                                                <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-03-19">
+                                                <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-06-01">
                                                 <div class="form-group fecha-solicitud">
                                                     <div id="fechaPicker"></div>
                                                     <hr>
