@@ -190,42 +190,9 @@
                 });
                 $('#cbOficina').on('change', function(){
                     let value = $('#cbLocalidad').val();
-                    let fecha = $('#dfFecha').val();
-                    let oficina = $('#cbOficina').val();
-
-                    //ACA VALIDO NUEVAMENTE SI ES DOMINGO
-                    let date = new Date(fecha);
-                    var isWeekend = (date.getDay() === 6); 
-                    if(isWeekend){
-                        showMsg('Advertencia!', 'Debe seleccionar un día entre Lunes y Sábado','red');
-                        $('#cbHorarios').empty();
+                    if(value){
+                      buscarDisponibilidad();
                     }
-                    if(value && fecha && oficina && !isWeekend){
-                        let url = '/api/oficinas/horarios/'+oficina+'/'+fecha;
-                        $.ajax( url )
-                        .done(function(data) {
-                            $('#cbHorarios').empty();
-                            if(data.status == 'success'){
-                                $('#vcosto').text('');
-                                $('#vcosto').show();
-                                data.data.forEach(element => {
-                                    var option = new Option(element, element);
-                                    $('#cbHorarios').append(option);
-                                });
-                                if(data.tiene_costo == 1){
-                                    $('#vcosto').text('Costo SUBE $'+data.costo+'.00');
-                                    $('#vcosto').show();
-                                    showMsg('Advertencia!', 'El retiro de la tarjeta SUBE en la oficina seleccionada tiene un costo de '+data.costo+' pesos','green');    
-                                }
-
-                            }else{
-                                showMsg('Advertencia!', data.msg,'red');
-                            }
-                        })
-                        .fail(function() {
-                        });
-                    }
-                        
                 });
                 $('#cbOficina').change();
 
