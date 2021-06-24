@@ -21,6 +21,7 @@ class Turno extends Model
         'hora_turno',
         'estado',
         'nro_turno',
+        'localidad',
     ];
     public function oficina(){
         return $this->belongsTo(Oficina::class, 'oficina_id');

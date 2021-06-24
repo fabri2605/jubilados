@@ -514,7 +514,11 @@ class SitioController extends Controller
             }            
         }
         if($saved){
+            Session::forget('turno');
             alert()->success('Información','Se he registrado su turno con el número '. $turno->nro_turno. '. Para el día '. $request->get("fechaTurno"). ' a las '. $request->get("hora_turno"). 'hs' );
+            return redirect()->route('turno');
+        }else{
+            return redirect()->route('turno')->withInput($request->all());
         }
     }
 }

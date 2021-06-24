@@ -35,8 +35,6 @@ class TurnoController extends Controller
                         $btn = $btn.'&nbsp;';
                         $btn = $btn.'<a data-id="'.$row->nro_turno.'"  class="btn btn-lasheras btn-sm rechazarTurno"><i class="fas fa-ban"></i></a>';
                         $btn = $btn.'&nbsp;';
-                        $btn = $btn.'<a data-id="'.$row->nro_turno.'"  class="btn btn-warning btn-sm reprogramarTurno cblanco"><i class="fas fa-history"></i></a>';
-                        $btn = $btn.'&nbsp;';
                         $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->nro_turno.'" data-original-title="Delete" class="btn btn-danger btn-sm eliminarTurno"><i class="fas fa-minus"></i></a>';
                         $btn = $btn.'</div>';
                         return $btn;

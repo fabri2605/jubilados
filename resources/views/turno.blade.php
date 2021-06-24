@@ -55,7 +55,7 @@
                                         <div class="row">
                                               <div class="form-group col-md-6">
                                                 <label for="Nombre ">* Localidad</label>
-                                                <select name="localidad_id" class="form-control select2 custom-select" id="cbLocalidad" >
+                                                <select name="localidad" class="form-control select2 custom-select" id="cbLocalidad" >
                                                         <option value=""></option>
                                                         <option value="Gran Mendoza"
                                                             @if(old('localidad') == "Gran Mendoza")
