@@ -171,26 +171,44 @@
                                 </li>
                                 @if(Auth::user()->hasRoles(['admin','user']))
                                     <li class="sidebar-item">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('turnos.index')}}" aria-expanded="false">
+                                            <i class="fas fa-calendar-check"></i>
+                                            <span class="hide-menu">Turnos </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('oficina.index')}}" aria-expanded="false">
+                                            <i class="fas fa-building"></i>
+                                            <span class="hide-menu">Oficinas UGS </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a class="sidebar-link  waves-effect waves-dark" href="{{route('dias.index')}}" aria-expanded="false">
+                                            <i class="fas fa-calendar-times"></i>
+                                            <span class="hide-menu">Dias Especiales </span>
+                                        </a>
+                                    </li>
+                                    <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('solicitudes.index')}}" aria-expanded="false">
-                                            <i class="mdi mdi-comment-question-outline"></i>
+                                            <i class="far fa-file-alt"></i>
                                             <span class="hide-menu">Solicitudes </span>
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('enviados.index')}}" aria-expanded="false">
-                                            <i class="mdi mdi-cloud-upload"></i>
+                                            <i class="fas fa-paper-plane"></i>
                                             <span class="hide-menu">Registros Enviados </span>
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('solicitudes_san_rafael.index')}}" aria-expanded="false">
-                                            <i class="mdi mdi-comment-question-outline"></i>
+                                            <i class="fas fa-file"></i>
                                             <span class="hide-menu">Solicitudes San Rafael </span>
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('enviado_san_rafael.index')}}" aria-expanded="false">
-                                            <i class="mdi mdi-cloud-upload"></i>
+                                            <i class="fas fa-paper-plane"></i>
                                             <span class="hide-menu">Enviados San Rafael </span>
                                         </a>
                                     </li>
