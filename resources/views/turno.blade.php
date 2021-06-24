@@ -94,7 +94,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="Documento "> Celular</label>
-                                                <input type="number" class="form-control" id="txtCelular" name="celular" value="{{old('celular')}}" >
+                                                <input type="number" class="form-control" id="txtCelular" name="telefono" value="{{old('telefono')}}" >
                                             </div>
                                             <div class="form-group col-md-12" >
                                                 <h3 class="main_question"><strong></strong>Día :</h3>
