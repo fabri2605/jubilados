@@ -107,7 +107,7 @@
                                                         Seleccionado <span></span>
                                                     </p>
                                                 </div>
-                                                <button type="button" onclick="buscarDisponibilidad()" class="btn btn-primary" >
+                                                <button id="btnUpdate" style="display: none" type="button" onclick="buscarDisponibilidad()" class="btn btn-primary" >
                                                   Actualizar
                                                 </button>
                                             </div>
