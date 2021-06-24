@@ -95,10 +95,10 @@
                                                 <label for="Documento "> Celular</label>
                                                 <input type="number" class="form-control" id="txtCelular" name="celular" value="{{old('celular')}}" >
                                             </div>
-                                            <div class="form-group col-md-12" style="width: 60%;margin: 0 auto;">
+                                            <div class="form-group col-md-12" >
                                                 <h3 class="main_question"><strong></strong>Día :</h3>
                                                 <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-06-01">
-                                                <div class="form-group fecha-solicitud">
+                                                <div class="form-group fecha-solicitud" style="width: 60%;margin: 0 auto;">
                                                     <div id="fechaPicker"></div>
                                                     <hr>
                                                     <p class="leyenda">
@@ -107,15 +107,17 @@
                                                         Seleccionado <span></span>
                                                     </p>
                                                 </div>
+                                                <button type="button" onclick="buscarDisponibilidad()" class="btn btn-primary" >
+                                                  Actualizar
+                                                </button>
                                             </div>
+                                            <hr>
                                             <div class="form-group col-md-12">
                                                 <label for="Nombre ">* Horarios</label>
                                                 <p>Horarios Disponibles para el día seleccionado</p><br/>
                                                 <select name="hora_turno" class="form-control" id="cbHorarios" required>
                                                 </select>
-                                                <button type="button" id="btnUpdate" class="btn btn-primary" >
-                                                    Actualizar
-                                                </button>
+                                                
                                             </div>
                                             <br>
                                         </div>
