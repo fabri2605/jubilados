@@ -176,21 +176,7 @@
            var map;
            var oficina_actual = null;
            $(document).ready(function(){
-                var loaded = false;
-                let doc = $('#edni').val();
-                if(doc){
-                    showMsg('Advertencia!', $('#edni').val(),'red');
-                }
-                let msg = $('#msg').val();
-                if(msg){
-                    showMsg('Información!', $('#msg').val(),'success');
-                }
-                $('#txtDocumento').on('change', function(){
-                    let value = $('#cbLocalidad').val();
-                    if(value){
-                        $('#cbLocalidad').change();
-                    }
-                });
+                            
                 $('#cbOficina').on('change', function(){
                     let value = $('#cbLocalidad').val();
                     if(value){
