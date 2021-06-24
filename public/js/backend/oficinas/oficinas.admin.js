@@ -4,6 +4,9 @@ $('.summernote').summernote({
   maxHeight: null, // set maximum height of editor
   focus: false // set focus to editable area after initializing summernote
 });
+$(".combo").select2({
+    allowClear: true,
+  });
 $('.llegada').on('click',function(){
   let id = $(this)[0].id;
   let idparts = id.split('-');
@@ -78,8 +81,6 @@ $('.calcular').on('focusout',function(){
       }
   }
 
-  $(".combo").select2({
-    allowClear: true,
-    });
+  
   
 });
