@@ -77,5 +77,9 @@ $('.calcular').on('focusout',function(){
           }
       }
   }
+
+  $(".combo").select2({
+    allowClear: true,
+    });
   
 });
