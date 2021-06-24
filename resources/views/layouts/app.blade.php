@@ -270,42 +270,6 @@
     <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/js/messages/messages.es-es.min.js"></script>
-
-    <script>
-            $(document).ready(function() {
-                 $('.dataTable').DataTable( {
-                        retrieve: true,
-                        lengthMenu: [ 50,100,150,200 ],
-                       "language": {
-                           "lengthMenu": "_MENU_ por página",
-                           "zeroRecords": "No hay resultados",
-                           "info": "mostrando página _PAGE_ de _PAGES_",
-                           "infoEmpty": "No hay registros disponibles",
-                           "infoFiltered": "(filtrando de _MAX_ registros totales)",
-                           "search": "Buscar",
-                           "paginate": {
-                               first:      "Primera",
-                               previous:   "Anterior",
-                               next:       "Siguiente",
-                               last:       "Ultima"
-                           },
-                          
-                       },
-                       buttons: [
-                            'copy', 'csv', 'excel', 'pdf', 'print'
-                            ],
-                           dom: 'Bfrtip',
-                           
-                       select: true,
-                       fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36', '48' , '64', '82', '150'],
-                   });
-                   $(".combo").select2({
-                        allowClear: true,
-                   });
-                   $(":input").inputmask();_validate = null;
-            $('.buttons-copy, .buttons-csv, .buttons-print, .buttons-pdf, .buttons-excel').addClass('btn btn-primary mr-1');
-        });
-    </script>
     @stack('scripts')
 </body>
 </html>
