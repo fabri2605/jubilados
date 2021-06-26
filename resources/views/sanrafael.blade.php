@@ -23,6 +23,14 @@
 		.capital{
 			text-transform: capitalize;
 		}
+		.tipo-abono{
+			display: flex;
+			justify-content: flex-start;
+			gap: 100px;
+		}
+		h2,h4{
+			color: #6AA100;
+		}
 	</style>
 </head>
 
@@ -59,21 +67,43 @@
 							<div class="form-content pera-content">
 								<div class="step-inner-content">
 									<!--<span class="step-no">PASO 1</span>!-->
-									<h4>Si Ud. vive en San Rafael y todavia no tiene su tarjeta SUBE, solicitela completando el siguiente formulario. Su Tarjeta SUBE sera enviada a su domicilio sin cargo.</h4>
+									<h3>Si Ud. vive en San Rafael es <u>Mayor de 70 años</u> o posee algún tipo de <u>Discapacidad</u> y todavia no tiene su tarjeta SUBE, solicitela completando el siguiente formulario. Su Tarjeta será enviada a su domicilio sin cargo.</h3>									<hr>
+									
+									<div class="gender-abono">
+										<h4>Tipo de Abono:</h4>
+										<hr>
+										<div class="tipo-abono">
+											<label>
+												<input type="radio" class="radio-mayor" name="abono" value="M">
+												<span class="checkmark"></span>Mayor de 70 años
+											</label>
+											<label>
+												<input type="radio" class="radio-discapacidad" name="abono" value="D">
+												<span class="checkmark"></span>Discapacidad
+											</label>
+										</div>
+									</div>
 									<hr>
-									<h3>Ingrese el Número de D.N.I</h3>
+									<div class="tipo-discapacidad" style="display: none">
+											<h4>Adjunte certificado de Discapacidad:</h4>
+											<hr>
+											<input type="file" name="file-discapacidad" id="file-discapacidad">
+											<hr>
+									</div>
+									
+									<h4>Ingrese el Número de D.N.I</h4>
 									<div class="form-inner-area">
 										<input type="number" name="dni" id="dni" class="form-control required" maxlength="11" minlength="8" placeholder="Ingrese Número de Documento" required>
 										<input type="hidden" name="abono" id="abono">
 									</div>
-									<h3>Ingrese el Número de Trámite de su Documento Nacional de Identidad</h3>
+									<h4>Ingrese el Número de Trámite de su Documento Nacional de Identidad</h4>
                                     <p>El número de Trámite son los once dígitos numéricos que se encuentran al frente de su DNI</p>
                                 
 									<div class="form-inner-area">
 										<input type="text" name="nro_tramite" id="nro_tramite" class="form-control required" maxlength="11"  placeholder="Ingrese Número de Trámite" data-inputmask="'mask': '99999999999'" required>
 									</div>
 
-									<h3>Ingrese Nuevamente el Número de Trámite de su Documento Nacional de Identidad</h3>
+									<h4>Ingrese Nuevamente el Número de Trámite de su Documento Nacional de Identidad</h4>
 									<div class="form-inner-area">
 										<input type="text" name="nro_tramite_repetir" id="nro_tramite_repetir" class="form-control required" maxlength="11"  placeholder="Ingrese Nuevamente su Número de Trámite" data-inputmask="'mask': '99999999999'" required>
 									</div>
@@ -124,7 +154,7 @@
                                         <input type="text" id="fijo" name="fijo" class="form-control" placeholder="Teléfono Fijo" data-inputmask="'mask': '+54 999 9999999'">
 									</div>
 									<div class="gender-selection">
-										<h3>Sexo:</h3>
+										<h4>Sexo:</h4>
 										<label>
 											<input type="radio" name="sexo" value="M">
 											<span class="checkmark"></span>Masculino
@@ -201,7 +231,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 	<script src="/sitio/assets/js/bootstrap.min.js"></script>
 	<script src="/js/jquery-confirm.min.js"></script>
-	<script src="/sitio/assets/js/main.js?version=20"></script>
+	<script src="/sitio/assets/js/mainsr.js?version=20"></script>
     <script src="/sitio/assets/js/switch.js"></script>
 	
 	
@@ -209,6 +239,7 @@
 		_validate = null;
 		_continuar = true;
 		_continuarPaso2 = true;
+		_tipo_abono = null;
         $(document).ready(function(){
 			$(":input").inputmask();_validate = null;
 			
@@ -259,6 +290,16 @@
 				}
 			});
 		});
+
+		$('body').on("change",'.radio-mayor', function(){
+				_tipo_abono = "M";
+				$(".tipo-discapacidad").hide("slow");
+		});
+		$('body').on("change",'.radio-discapacidad', function(){
+				_tipo_abono = "D";
+				$(".tipo-discapacidad").show("slow");
+		})
+		
 		$("#cuit" ).focusout(function() {
 			var vec = new Array(10);
 			var cuit = $(this).val();
