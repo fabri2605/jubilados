@@ -31,10 +31,17 @@ class SolicitudSanRafaelController extends Controller
                         $btn = $btn.'</div>';
                         return $btn;
                 })
+                ->editColumn('certificado', function($row){
+                    if($row->certificado){
+                        return '<a href="'.$row->certificado.'" target="_blank" >Certificado</a>';
+                    }else{
+                        "";
+                    }
+                })
                 ->editColumn('fecha_solicitud', function($row){
                     return Carbon::parse($row->fecha_solicitud)->format('d/m/Y H:i:s');
                 })
-                ->rawColumns(['action','fecha_solicitud'])
+                ->rawColumns(['action','fecha_solicitud','certificado'])
                 ->toJson();
         }
         return view('solicitudes_san_rafael.index');

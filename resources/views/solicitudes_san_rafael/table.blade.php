@@ -24,12 +24,13 @@
         <tr role="row">
             <th style="color:#fff">Nro Solicitud</th>
             <th style="color:#fff">Fecha</th>
+            <th style="color:#fff">Abono</th>
+            <th style="color:#fff">Certificado</th>
             <th style="color:#fff">CUIT</th>
             <th style="color:#fff">Apellido</th>
             <th style="color:#fff">Nombre</th>
             <th style="color:#fff">Celular</th>
             <th style="color:#fff">Email</th>
-            <th style="color:#fff">Abono</th>
             <th style="color:#fff">Acciones</th>
         </tr>
       </thead>
@@ -85,6 +86,8 @@
                 columns: [
                     {data: 'nro_solicitud', name: 'nro_solicitud'},
                     {data: 'fecha_solicitud', name: 'fecha_solicitud'},
+                    {data: 'abono', name: 'abono'},
+                    {data: 'certificado', name: 'certificado'},
                     {data: 'cuit', name: 'cuit'},
                     {data: 'apellido', name: 'apellido'},
                     {data: 'nombre', name: 'nombre'},
