@@ -23,7 +23,8 @@
       <thead class="bg-info">
         <tr role="row">
             <th style="color:#fff">Nro Solicitud</th>
-            <th style="color:#fff">Fecha y Hora</th>
+            <th style="color:#fff">Fecha</th>
+            <th style="color:#fff">Hora</th>
             <th style="color:#fff">CUIT</th>
             <th style="color:#fff">Apellido</th>
             <th style="color:#fff">Nombre</th>
@@ -85,6 +86,7 @@
                 columns: [
                     {data: 'nro_solicitud', name: 'nro_solicitud'},
                     {data: 'fecha_solicitud', name: 'fecha_solicitud'},
+                    {data: 'hora_solicitud', name: 'hora_solicitud'},
                     {data: 'cuit', name: 'cuit'},
                     {data: 'apellido', name: 'apellido'},
                     {data: 'nombre', name: 'nombre'},
