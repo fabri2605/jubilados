@@ -37,7 +37,7 @@ class SolicitudSanRafaelController extends Controller
                 ->editColumn('hora_solicitud', function($row){
                     return Carbon::parse($row->fecha_solicitud)->format('H:i:s');
                 })
-                ->rawColumns(['action'])
+                ->rawColumns(['action','hora_solicitud', 'fecha_solicitud'])
                 ->toJson();
         }
         return view('solicitudes_san_rafael.index');
