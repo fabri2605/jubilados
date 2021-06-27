@@ -42,7 +42,7 @@
             </div>
             <div class="card">
                 <div class="item">
-                  <a href="{{route('inicio')}}"><i class="far fa-credit-card"></i></a>
+                  <a href="{{route('home')}}"><i class="far fa-credit-card"></i></a>
                 </div>
                 <h3 class="item-name">Abono Jubilados. Mayores de 70 y Discapacidad</h3>
                 <p class="item-text">
