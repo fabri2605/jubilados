@@ -52,6 +52,10 @@ class SitioController extends Controller
         $agent = new Agent();
         return view('waiting');
     }
+    public function testing(){
+        $agent = new Agent();
+        return view('principal');
+    }
     public function landingSR(){
         $agent = new Agent();
         //return view('inicio_sanrafael');
