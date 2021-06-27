@@ -248,55 +248,48 @@
 				$('#nro_tramite').inputmask({ "placeholder": "" });
 				$('#nro_tramite_repetir').inputmask({ "placeholder": "" });
 
-			$("#fecha_nacimiento").focusout(function(){
-  				if(_tipo_abono == "D"){
-							let fecha_nacimiento = $("#fecha_nacimiento").val();
-							console.log(fecha_nacimiento);
-					}
-			});
-
-			$("#dni" ).focusout(function() {	
-				let val = $(this).val();
-				if((val != _validate) && val){
-					_validate = val;
-					$.ajax({
-						url: "/sitio/validar/abono/particulares/sanrafael",
-						method: 'POST',
-						data: {
-							documento: val,
-						},
-					}).done(function(data) {
-						if(data.status == 'error'){
-							_continuar = false;
-							document.getElementById("dni").focus();
-							$.alert({
-								title: 'Advertencia',
-								content: data.msg,
-								type: 'red',
-								typeAnimated: true,
-								icon: 'mdi mdi-alert-circle '+'red',
-								buttons: {
-									tryAgain: {
-										text: 'Aceptar',
-										btnClass: 'btn-'+'red',
-										close: function(){
-											
-										}
-									},
+				$("#dni" ).focusout(function() {	
+					let val = $(this).val();
+					if((val != _validate) && val){
+						_validate = val;
+						$.ajax({
+							url: "/sitio/validar/abono/particulares/sanrafael",
+							method: 'POST',
+							data: {
+								documento: val,
+							},
+						}).done(function(data) {
+							if(data.status == 'error'){
+								_continuar = false;
+								document.getElementById("dni").focus();
+								$.alert({
+									title: 'Advertencia',
+									content: data.msg,
+									type: 'red',
+									typeAnimated: true,
+									icon: 'mdi mdi-alert-circle '+'red',
+									buttons: {
+										tryAgain: {
+											text: 'Aceptar',
+											btnClass: 'btn-'+'red',
+											close: function(){
+												
+											}
+										},
+									
+									}
+								});
 								
-								}
-							});
-							
-						}else{
-							$('#abono-solicitado').text(data.msg);
-							$('#abono').val(data.abono);
-							_continuar = true;
-						}
-					});
+							}else{
+								$('#abono-solicitado').text(data.msg);
+								$('#abono').val(data.abono);
+								_continuar = true;
+							}
+						});
 
-				}
+					}
+				});
 			});
-		});
 
 		$('body').on("change",'.radio-mayor', function(){
 				_tipo_abono = "M";

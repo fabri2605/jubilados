@@ -55,7 +55,7 @@ $(function() {
       $(this).addClass("active");
   });
 
-  $('#fecha_nacimiento').on('change',function(){
+  $('#fecha_nacimiento').on('focusout',function(){
       let val = $('#fecha_nacimiento').val();
       var hoy = new Date();
       var cumpleanos = new Date(val);
@@ -65,7 +65,12 @@ $(function() {
       if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
           edad--;
       }
-      console.log('EDAD ',edad);
+      if(_tipo_abono == "M" && edad < 70){
+            $.alert({
+                title: 'Advertencia!',
+                content: 'Ha seleccionado un abono de Mayor de 70 años y usted no cumple con ese requisito',
+            });
+      }
   })
 
 
