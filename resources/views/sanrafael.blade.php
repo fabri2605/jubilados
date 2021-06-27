@@ -240,13 +240,20 @@
 		_continuar = true;
 		_continuarPaso2 = true;
 		_tipo_abono = null;
-        $(document).ready(function(){
-			$(":input").inputmask();_validate = null;
-			
-			$('#nombre').inputmask({ "placeholder": "" });
-			$('#apellido').inputmask({ "placeholder": "" });
-			$('#nro_tramite').inputmask({ "placeholder": "" });
-			$('#nro_tramite_repetir').inputmask({ "placeholder": "" });
+		$(document).ready(function(){
+				$(":input").inputmask();_validate = null;
+				
+				$('#nombre').inputmask({ "placeholder": "" });
+				$('#apellido').inputmask({ "placeholder": "" });
+				$('#nro_tramite').inputmask({ "placeholder": "" });
+				$('#nro_tramite_repetir').inputmask({ "placeholder": "" });
+
+			$("#fecha_nacimiento").focusout(function(){
+  				if(_tipo_abono == "D"){
+							let fecha_nacimiento = $("#fecha_nacimiento").val();
+							console.log(fecha_nacimiento);
+					}
+			});
 
 			$("#dni" ).focusout(function() {	
 				let val = $(this).val();
