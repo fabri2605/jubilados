@@ -294,12 +294,12 @@
 
 		$('body').on("change",'.radio-mayor', function(){
 				_tipo_abono = "M";
-				$("#tipo_abono").va(_tipo_abono);
+				$("#tipo_abono").val(_tipo_abono);
 				$(".tipo-discapacidad").hide("slow");
 		});
 		$('body').on("change",'.radio-discapacidad', function(){
 				_tipo_abono = "D";
-				$("#tipo_abono").va(_tipo_abono);
+				$("#tipo_abono").val(_tipo_abono);
 				$(".tipo-discapacidad").show("slow");
 		})
 		
