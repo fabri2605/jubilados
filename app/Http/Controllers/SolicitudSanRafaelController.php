@@ -100,7 +100,7 @@ class SolicitudSanRafaelController extends Controller
 
         $response = array();
         $response['status']='success';
-        $response['msg']='El SolicitudSanRafael  ha sido eliminado correctamente ';
+        $response['msg']='El Solicitud ha sido eliminado correctamente ';
 
         return $response;
     }

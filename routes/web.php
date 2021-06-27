@@ -19,7 +19,6 @@ Route::resource('solicitudes_san_rafael', 'SolicitudSanRafaelController');
 Route::resource('oficina', 'OficinaController');
 Route::resource('turnos', 'TurnoController');
 Route::resource('dias', 'DiaEspecialController');
-Route::resource('solicitudes_san_rafael', 'SolicitudSanRafaelController');
 
 Route::group(['prefix' => 'sitio'], function () {
     Route::post('/validar/abono', 'SitioController@validarAbono')->name('sitio.abono');
@@ -40,6 +39,10 @@ Route::group(['prefix' => 'sitio'], function () {
 Route::group(['prefix' => 'solicitudes'], function () {
     Route::delete('/eliminar/{data}', 'SolicitudController@destroy')->name('solicitudes.eliminar');
     Route::post('/generar/reporte/', 'SolicitudController@reporte')->name('solicitudes.reporte');
+});  
+
+Route::group(['prefix' => 'solicitudes_san_rafael'], function () {
+    Route::delete('/eliminar/{data}', 'SolicitudSanRafaelController@destroy')->name('solicitudes_san_rafael.eliminar');
 });  
 
 Route::group(['prefix' => 'enviados'], function () {
