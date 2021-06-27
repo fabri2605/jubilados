@@ -34,6 +34,7 @@ class SolicitudSanRafael extends Model
         'codigo_postal',
         'fecha_solicitud',
         'dni',
-        'abono'
+        'abono',
+        'certificado',
     ];
 }

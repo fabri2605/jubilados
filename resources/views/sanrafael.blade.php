@@ -58,10 +58,10 @@
 				</ul>
 			</div>
 		</div>
-		<form class="multisteps-form__form" action="{{route('sitio.abono_registro_san_rafael')}}" id="wizard" method="POST">
+		<form class="multisteps-form__form" action="{{route('sitio.abono_registro_san_rafael')}}" id="wizard" method="POST" enctype="multipart/form-data">
 			<div class="form-area position-relative">
 				<div class="multisteps-form__panel js-active" data-animation="slideHorz">
-                    <form id="frm-paso1" class="multisteps-form__form">
+        <form id="frm-paso1" class="multisteps-form__form">
 					<div class="wizard-forms">
 						<div class="inner pb-100 clearfix">
 							<div class="form-content pera-content">

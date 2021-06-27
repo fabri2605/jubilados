@@ -2,23 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
-use App\Role;
-use App\Abono;
-use App\Enviado;
-use App\OficinaAgendaDetalle;
-use App\EnviadoSanRafael;
-use App\Solicitud;
-use App\Oficina;
-use App\DiaEspecial;
-use App\Turno;
-use App\SolicitudSanRafael;
-use Carbon\Carbon;
-use Mail;
-use Alert;
 use Jenssegers\Agent\Agent;
 use Carbon\CarbonPeriod;
-use Illuminate\Support\Facades\Session;
+use Carbon\Carbon;
+
+use App\OficinaAgendaDetalle;
+use App\SolicitudSanRafael;
+use App\EnviadoSanRafael;
+use App\DiaEspecial;
+use App\Solicitud;
+use App\Enviado;
+use App\Oficina;
+use App\Abono;
+use App\Turno;
+use App\Role;
+use Alert;
+use Mail;
 use DB;
 
 class SitioController extends Controller
@@ -218,11 +220,19 @@ class SitioController extends Controller
             $solicitud->apellido = ucfirst($request->get('apellido'));
             $solicitud->calle = ucfirst($request->get('calle'));
             $solicitud->estado = 'SOLICITADO';
-            $solicitud->tipo_abono = 'PARTICULARES';
+            $solicitud->tipo_abono = ($request->get("abono") == "M" ? "MAYOR DE 70 AÑOS" : "DISCAPACIDAD");
             $solicitud->fecha_nacimiento = $date;
             $solicitud->fecha_solicitud = Carbon::now();
-            $solicitud->save();
+            $solicitud->certificado = null;
+            
+            if($request->get("abono") == "D"){
+                if($request->file('file-discapacidad')){
+                    $path = 'images/'.Storage::disk('public')->put('certificados', $request->file('file-discapacidad'));
+                    $solicitud->certificado =  asset($path);
+                }
+            }
 
+            $solicitud->save();
             $solicitud->nro_solicitud = 'TS-'.(1000+$solicitud->id);
             $solicitud->update();
             
