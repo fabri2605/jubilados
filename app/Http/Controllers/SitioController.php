@@ -50,7 +50,7 @@ class SitioController extends Controller
     }
     public function landing(){
         $agent = new Agent();
-        return view('inicio');
+        return view('principal');
     }
     public function landingSR(){
         $agent = new Agent();
