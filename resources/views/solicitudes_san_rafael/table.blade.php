@@ -86,14 +86,13 @@
                 columns: [
                     {data: 'nro_solicitud', name: 'nro_solicitud'},
                     {data: 'fecha_solicitud', name: 'fecha_solicitud'},
-                    {data: 'abono', name: 'abono'},
+                    {data: 'tipo_abono', name: 'tipo_abono'},
                     {data: 'certificado', name: 'certificado'},
                     {data: 'cuit', name: 'cuit'},
                     {data: 'apellido', name: 'apellido'},
                     {data: 'nombre', name: 'nombre'},
                     {data: 'celular', name: 'celular'},
                     {data: 'email', name: 'email'},
-                    {data: 'tipo_abono', name: 'tipo_abono'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ],
                 columnDefs: [
