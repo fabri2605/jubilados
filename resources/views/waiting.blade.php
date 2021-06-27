@@ -55,7 +55,7 @@
 		<div class="container marketing">
 		  <div class="row">
         <div class="col-12 text-center">
-          <h2>El registro se encontrará disponible a partir del 30 de Junio</h2>
+          <h2>Estamos actualizando el sitio</h2>
         </div>
 		  </div>
     </div>
