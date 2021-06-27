@@ -221,12 +221,12 @@ class SitioController extends Controller
             $solicitud->apellido = ucfirst($request->get('apellido'));
             $solicitud->calle = ucfirst($request->get('calle'));
             $solicitud->estado = 'SOLICITADO';
-            $solicitud->tipo_abono = ($request->get("abono") == "M" ? "MAYOR DE 70 AÑOS" : "DISCAPACIDAD");
+            $solicitud->tipo_abono = ($request->get("tipo_abono") == "M" ? "MAYOR DE 70 AÑOS" : "DISCAPACIDAD");
             $solicitud->fecha_nacimiento = $date;
             $solicitud->fecha_solicitud = Carbon::now();
             $solicitud->certificado = null;
             
-            if($request->get("abono") == "D"){
+            if($request->get("tipo_abono") == "D"){
                 if($request->file('file-discapacidad')){
                     $path = 'images/'.Storage::disk('public')->put('certificados', $request->file('file-discapacidad'));
                     $solicitud->certificado =  asset($path);
