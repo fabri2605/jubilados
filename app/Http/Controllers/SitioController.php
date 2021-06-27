@@ -208,7 +208,6 @@ class SitioController extends Controller
         }*/
     }
     public function registrarParticularSanRafael(Request $request){
-        return $request;
         $validar = SolicitudSanRafael::where('cuit','=',$request->get('cuit'))->where('estado','=','SOLICITADO')->first();
         if(empty($validar)){
             $data = explode('-',$request->get('cuit'));
