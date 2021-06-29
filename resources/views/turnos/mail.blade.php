@@ -8,7 +8,7 @@
               <td><b>Número Turno:</b></td>
               <td>{{$actual->nro_turno}}</b></td>
               <td><b>Fecha Turno:</b></td>
-              <td>{{$actual->fecha_turno->format('d/m/Y')}}</b></td>
+              <td>{{\Carbon\Carbon::parse($actual->fecha_turno)->format('d/m/Y')}}</b></td>
           </tr>
           <tr>
               <td><b>Horario:</b></td>
