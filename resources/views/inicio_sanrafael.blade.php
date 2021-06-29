@@ -7,14 +7,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sube Mendoza </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
-    <link href="css/principal.css" rel="stylesheet">
+    <link href="/css/principal.css" rel="stylesheet">
 </head>
 
 <body>
     <header class="header"></header>
     <main>
         <div class="banner">
-            <img src="assets/images/2021/logo.png" class="logo">
+            <img src="/assets/images/2021/logo.png" class="logo">
             <h4>Conocé todos los medios disponibles para conseguir tu tarjeta SUBE en San Rafael </h4>
         </div>
         <section class="menu">
