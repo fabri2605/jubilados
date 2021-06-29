@@ -80,6 +80,29 @@
             </select>
         </div>
     </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <div class="b-label">
+                <label for="pass" class="control-label col-form-label">Oficina</label>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <select name="oficina_id"  id="cbOficina" class="combo form-control custom-select js-example-responsive">
+                    <option value="">Todos</option>
+                    @if($oficinas)
+                        @foreach($oficinas as $item)
+                            <option value="{{$item->id}}"
+                                @if($user->oficina_id == $item->id)
+                                    selected
+                                @endif
+                            >
+                                {{$item->denominacion}}
+                            </option>
+                        @endforeach
+                    @endif
+            </select>
+        </div>
+    </div>
 </div>
 <hr>
 @push('scripts')
@@ -99,6 +122,7 @@
             }
         }
         $('#cbRoles').change();
+        $('#cbOficina').change();
     });
 </script>
 @endpush

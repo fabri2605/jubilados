@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use DB;
 use App\User;
+use App\Oficina;
 use App\Role;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
@@ -24,9 +25,10 @@ class UserController extends Controller
 
     public function create()    
     {
-        $user = (new User);
-        $roles = Role::orderBy('display_name', 'asc')->get();
-        return view('users.create', compact('roles','user'));
+        $oficinas = Oficina::orderBy("denominacion")->get();
+        $user     = (new User);
+        $roles    = Role::orderBy('display_name', 'asc')->get();
+        return view('users.create', compact('roles','user','oficinas'));
     }
 
     public function store(UserRequest $request)
@@ -42,9 +44,10 @@ class UserController extends Controller
     }
     public function edit($user)
     {
-        $user = User::findOrFail($user);
-        $roles = Role::orderBy('display_name', 'asc')->get();
-        return view('users.edit', compact('user', 'roles' ));
+        $oficinas = Oficina::orderBy("denominacion")->get();
+        $user     = User::findOrFail($user);
+        $roles    = Role::orderBy('display_name', 'asc')->get();
+        return view('users.edit', compact('user', 'roles', 'oficinas'));
     }
     public function update(UserRequest $request, $id)
     {   
