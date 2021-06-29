@@ -533,6 +533,13 @@ class SitioController extends Controller
         }
         if($saved){
             Session::forget('turno');
+            if($turno->email){
+                $valido = (!preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $turno->email)) ? FALSE : TRUE;
+                if($valido){
+                    $datos = Turno::with('oficina')->find($turno->id);
+                    Mail::to($turno->email)->queue(new TurnoMail($datos));
+                }
+            }
             alert()->success('Información','Se he registrado su turno con el número '. $turno->nro_turno. '. Para el día '. $request->get("fechaTurno"). ' a las '. $request->get("hora_turno"). 'hs' );
             return redirect()->route('turno');
         }else{

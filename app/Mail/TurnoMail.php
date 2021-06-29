@@ -20,6 +20,6 @@ class TurnoMail extends Mailable
     public function build()
     {
         $actual = $this->turno;
-        return $this->subject("Turno SUBE")->view('mail', compact('actual'));
+        return $this->view('turnos.mail', compact('actual'));
     }
 }
