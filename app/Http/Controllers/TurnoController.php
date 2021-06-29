@@ -14,6 +14,7 @@ use Alert;
 use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Auth;
 
 class TurnoController extends Controller
 {
@@ -25,7 +26,13 @@ class TurnoController extends Controller
     {
         $oficinas = Oficina::orderBy('denominacion','asc')->get();
         if ($request->ajax()) {
-            $model = Turno::query(DB::table('turnos')->whereNull('deleted_at'))->with('oficina')->orderBy('turnos.created_at', 'desc');
+            $model = Turno::query(DB::table('turnos')->whereNull('deleted_at'))->with('oficina');
+            if(Auth::user()->hasRoles(['user'])){
+                $logged = User::find(Auth::id());
+                $model->where("oficina_id", $logged->oficina_id);
+            }
+            $model->orderBy('turnos.created_at', 'desc');
+
             return DataTables::eloquent($model)
                 ->addColumn('action', function($row){
                         $btn = '<div class="btn-group" role="group" >';
