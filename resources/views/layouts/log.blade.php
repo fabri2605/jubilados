@@ -14,7 +14,7 @@
     
     <script src="{{ asset('js/app.js') }}" defer ></script>
 </head>
-<body>
+<body style="background: #F2F2F2">
         <div class="preloader">
                 <div class="lds-ripple">
                     <div class="lds-pos"></div>
@@ -164,7 +164,7 @@
                     </nav>
                 </header>
                 @endif
-                <div class="container-fluid" style="margin-top: 0%">
+                <div class="container-fluid" style="margin-top: 0%; background: #F2F2F2">
                     <div class="container-fluid">
                         @yield('content')
                     </div>
