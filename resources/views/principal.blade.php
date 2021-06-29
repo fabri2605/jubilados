@@ -32,7 +32,7 @@
             </div>
             <div class="card">
                 <div class="item">
-                    <a href="{{route('turno')}}"><i class="far fa-calendar-check"></i></a>
+                    <a href="{{route('retirala')}}"><i class="far fa-calendar-check"></i></a>
                 </div>
                 <h3 class="item-name">Retirala</h3>
                 <p class="item-text">
@@ -52,12 +52,11 @@
             </div>
             <div class="card">
                 <div class="item">
-                    <a href="{{route('sanrafael')}}"><i class="far fa-credit-card"></i></a>
+                    <a href="{{route('home_san_rafael')}}"><i class="far fa-credit-card"></i></a>
                 </div>
-                <h3 class="item-name">Abono Mayores de 70 y Jubilados San Rafael</h3>
+                <h3 class="item-name">Abonos San Rafael</h3>
                 <p class="item-text">
-                    Si Ud. es actualmente reside en San Rafael beneficiario del Mayores de 70 Años, Discapacidad o Ley
-                    7811, solicite su Tarjeta SUBE y sera enviada a su domicilio
+                    Si Ud. reside en San Rafel ingrese aquí para solicitar su tarjeta SUBE
                 </p>
             </div>
         </section>

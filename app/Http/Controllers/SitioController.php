@@ -30,6 +30,10 @@ class SitioController extends Controller
         $agent = new Agent();
         return view('welcome');
     }
+    public function sitioSanRafael(){
+        $agent = new Agent();
+        return view('inicio_sanrafael');
+    }
     public function turno(){
         $agent = new Agent();
         $turno = Session::get('turno');

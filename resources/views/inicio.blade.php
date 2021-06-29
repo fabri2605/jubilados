@@ -36,9 +36,9 @@
 		}
 		.elemento{
 			font-weight: 500;
-    		text-align: center;
-    		width: 190px;
-    		vertical-align: top;
+			text-align: center;
+			width: 190px;
+			vertical-align: top;
 		}
 	</style>
 </head>

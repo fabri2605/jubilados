@@ -5,11 +5,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get('/', 'SitioController@landing')->name('inicio');
 Route::get('/testing', 'SitioController@testing')->name('testing');
-Route::get('/sanrafael', 'SitioController@landingSR')->name('inicio_sanrafael');
+Route::get('/waiting', 'SitioController@landingSR')->name('inicio_sanrafael');
 
 Route::get('/particulares', 'SitioController@particulares')->name('particulares');
 Route::get('/sanrafael/solicitud', 'SitioController@sanrafael')->name('sanrafael');
 Route::get('/inicio', 'SitioController@sitio')->name('home');
+Route::get('/testing/sanrafael', 'SitioController@sitioSanRafael')->name('home_san_rafael');
+Route::get('/sanrafael', 'SitioController@landing')->name('home_san_rafael');
+
 Route::get('/retira', 'SitioController@retirala')->name('retirala');
 Route::get('/home', 'HomeController@index')->name('menu');
 Route::get('/turno', 'SitioController@turno')->name('turno');
