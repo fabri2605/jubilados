@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 use Carbon\CarbonPeriod;
@@ -12,6 +13,7 @@ use Carbon\Carbon;
 use App\OficinaAgendaDetalle;
 use App\SolicitudSanRafael;
 use App\EnviadoSanRafael;
+use App\Mail\TurnoMail;
 use App\DiaEspecial;
 use App\Solicitud;
 use App\Enviado;
