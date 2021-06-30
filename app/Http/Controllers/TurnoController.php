@@ -33,7 +33,6 @@ class TurnoController extends Controller
                 $model->where("oficina_id", $logged->oficina_id);
             }
             $model->orderBy('turnos.created_at', 'desc');
-|
             return DataTables::eloquent($model)
                 ->addColumn('action', function($row){
                         $btn = '<div class="btn-group" role="group" >';
