@@ -178,6 +178,7 @@
            $(document).ready(function(){
                             
                 $('#cbOficina').on('change', function(){
+                    $("#cbHorarios").empty();
                     let value = $('#cbLocalidad').val();
                     if(value){
                       buscarDisponibilidad();
