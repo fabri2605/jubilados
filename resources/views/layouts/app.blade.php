@@ -176,6 +176,8 @@
                                             <span class="hide-menu">Turnos </span>
                                         </a>
                                     </li>
+                                @endif
+                                @if(Auth::user()->hasRoles(['admin']))
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('oficina.index')}}" aria-expanded="false">
                                             <i class="fas fa-building"></i>
@@ -188,6 +190,8 @@
                                             <span class="hide-menu">Dias Especiales </span>
                                         </a>
                                     </li>
+                                @endif
+                                @if(Auth::user()->hasRoles(['admin','user']))
                                     <li class="sidebar-item">
                                         <a class="sidebar-link  waves-effect waves-dark" href="{{route('solicitudes.index')}}" aria-expanded="false">
                                             <i class="far fa-file-alt"></i>
