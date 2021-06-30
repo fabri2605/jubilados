@@ -169,7 +169,7 @@
        <script src="/js/jquery-confirm.min.js"></script>
        <script src="/js/messages.js"></script> 
        <script src="/js/select2.min.js"></script>
-       <script type="text/javascript" src="/js/front/horarios.min.js?v=12"></script>
+       <script type="text/javascript" src="/js/front/horarios.min.js?v=40"></script>
        <script type="text/javascript" src="/libs/jquery-ui.min.js"></script>
        <script src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap" async defer></script>
        <script>
@@ -179,6 +179,7 @@
                             
                 $('#cbOficina').on('change', function(){
                     $("#cbHorarios").empty();
+                    $('#fechaPicker' ).datepicker( "destroy" );
                     let value = $('#cbLocalidad').val();
                     if(value){
                       buscarDisponibilidad();
