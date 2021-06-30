@@ -51,7 +51,7 @@
                                 <!--End Logo icon -->
                                 <!-- Logo text -->
                                 <span class="logo-text" style="color:#fff; font-family: 'Manrope'">
-                                    Jubilados
+                                    
                                 </span>
                             </a>
                             <!-- ============================================================== -->
