@@ -59,9 +59,8 @@
                 <div class="item">
                     <a href="{{route('home_san_rafael')}}"><i class="far fa-credit-card"></i></a>
                 </div>
-                <h3 class="item-name">Abonos San Rafael</h3>
+                <h3 class="item-name">SUBE San Rafael</h3>
                 <p class="item-text">
-                    Si Ud. reside en San Rafel ingrese aquí para solicitar su tarjeta SUBE
                 </p>
             </div>
         </section>
