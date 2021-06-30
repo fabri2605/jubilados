@@ -9,7 +9,7 @@
     <meta name="author" content="Renzo Andrés Vinci">
     <meta name="publisher" content="Renzo Andrés Vinci">
     <meta name="copyright" content="Gobierno de Mendoza">
-    <meta name="description" content="This short description describes my website.">
+    <meta name="description" content="Sitio oficial de SUBE para la provincia de Mendoza.  Aqui encontraras todo lo relacionado con la solicitud de la Tarjeta">
     <title>Sube Mendoza </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <link href="css/principal.css" rel="stylesheet">
