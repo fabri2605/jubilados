@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Turno;
 use App\DiaEspecial;
 use App\Oficina;
+use App\User;
 use App\Parametro;
 use App\OficinaAgendaDetalle;
 use Illuminate\Http\Request;
@@ -32,7 +33,7 @@ class TurnoController extends Controller
                 $model->where("oficina_id", $logged->oficina_id);
             }
             $model->orderBy('turnos.created_at', 'desc');
-
+|
             return DataTables::eloquent($model)
                 ->addColumn('action', function($row){
                         $btn = '<div class="btn-group" role="group" >';
