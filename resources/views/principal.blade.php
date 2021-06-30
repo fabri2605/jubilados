@@ -35,7 +35,7 @@
                     convenciencia, haciendo click aqui
                 </p>
             </div>
-            <div class="card">
+            <!--<div class="card">
                 <div class="item">
                     <a href="{{route('retirala')}}"><i class="far fa-calendar-check"></i></a>
                 </div>
@@ -44,7 +44,7 @@
                     Si Ud. todavia no tiene su Tarjeta SUBE, ,solicitela y sera enviada a su domicilio sin cargo,
                     haciendo click aqui
                 </p>
-            </div>
+            </div>!-->
             <div class="card">
                 <div class="item">
                   <a href="{{route('home')}}"><i class="far fa-credit-card"></i></a>

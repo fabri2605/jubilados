@@ -31,10 +31,9 @@
                 <div class="item">
                     <a href="{{route('sanrafael')}}"><i class="far fa-credit-card"></i></a>
                 </div>
-                <h3 class="item-name">Jubilados San Rafael y Discapacidad</h3>
+                <h3 class="item-name">Mayor de 70 años y Discapacidad</h3>
                 <p class="item-text">
-                    Si Ud. es actualmente reside en San Rafael beneficiario del Mayores de 70 Años, Discapacidad o Ley
-                    7811, solicite su Tarjeta SUBE y sera enviada a su domicilio
+                    Si Ud. es es Mayor de 70 Años o persona con Discapacidad, solicite el envío de su Tarjeta Sube a su domicilio, llenando el siguiente formulario
                 </p>
             </div>
         </section>
