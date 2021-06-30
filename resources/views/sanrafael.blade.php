@@ -3,6 +3,11 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="keywords" content="SUBE,San Rafael,Tarjeta, Mendoza, Jubilados, Discapacidad, Transporte">
+	<meta name="author" content="Renzo Andrés Vinci">
+	<meta name="publisher" content="Renzo Andrés Vinci">
+	<meta name="copyright" content="Gobierno de Mendoza">
+	<meta name="description" content="Sitio oficial de SUBE para San Rafael en la provincia de Mendoza.  Aqui encontraras todo lo relacionado con la solicitud de la Tarjeta">
 	<title>SUBE San Rafael</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/sitio/assets/css/bootstrap.min.css">

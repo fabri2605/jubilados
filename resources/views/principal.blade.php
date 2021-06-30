@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="SUBE, Tarjeta, Mendoza, Jubilados, Discapacidad, Transporte">
+    <meta name="author" content="Renzo Andrés Vinci">
+    <meta name="publisher" content="Renzo Andrés Vinci">
+    <meta name="copyright" content="Gobierno de Mendoza">
+    <meta name="description" content="This short description describes my website.">
     <title>Sube Mendoza </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css">
     <link href="css/principal.css" rel="stylesheet">
