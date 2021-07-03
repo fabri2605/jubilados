@@ -176,7 +176,7 @@
        <script src="/libs/jquery.min.js" ></script>
        <script src="/js/popper.min.js" ></script>
        <script src="/js/bootstrap.min.js" ></script>
-       <script src="/js/jquery-confirm.min.js"></script>
+       
        <script src="/js/messages.js"></script> 
        <script src="/js/select2.min.js"></script>
        <script type="text/javascript" src="/js/front/horarios.min.js?v=40"></script>
@@ -331,7 +331,7 @@
                 });
             }
        </script>
-       
+       <script src="/js/jquery-confirm.min.js"></script>
     </body>
 
 </html>
