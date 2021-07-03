@@ -185,7 +185,7 @@
        <script>
            var map;
            var oficina_actual = null;
-            _dialog_turno  = null;
+           var _dialog_turno  = null;
            
            $(document).ready(function(){
                             
