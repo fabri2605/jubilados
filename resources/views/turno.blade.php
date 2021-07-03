@@ -185,7 +185,7 @@
        <script>
            var map;
            var oficina_actual = null;
-           var _dialog_turno  = null;
+           
            
            $(document).ready(function(){
                 $('#cbOficina').on('change', function(){
