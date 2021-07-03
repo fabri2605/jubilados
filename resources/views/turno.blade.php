@@ -19,14 +19,20 @@
             height: 500px;
         }
         @media screen and (min-width: 0px) and (max-width: 480px){
-            .calendarPicker{
+            div.calendarPicker{
                 width: 90%;
                 margin: 0 auto;
             }
         }
         @media screen and (min-width: 481px) and (max-width: 768px){
-            .calendarPicker{
-                width: 60%;
+            div.calendarPicker{
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (min-width: 769px) {
+            div.calendarPicker{
+                width: 40%;
                 margin: 0 auto;
             }
         }
@@ -179,6 +185,8 @@
        <script>
            var map;
            var oficina_actual = null;
+           var _dialog_turno  = null;
+           
            $(document).ready(function(){
                             
                 $('#cbOficina').on('change', function(){
@@ -186,7 +194,13 @@
                     $('#fechaPicker' ).datepicker( "destroy" );
                     let value = $('#cbLocalidad').val();
                     if(value){
-                      buscarDisponibilidad();
+                        _dialog_turno = $.dialog({
+                            title: 'Obteniendo horarios...',
+                            content: 'Este proceso puede demorar unos segundos',
+                            closeIcon: false,
+                            theme: 'material'
+                        });
+                        buscarDisponibilidad();
                     }
                 });
                // $('#cbOficina').change();
