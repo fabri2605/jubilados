@@ -188,22 +188,14 @@
            var _dialog_turno  = null;
            
            $(document).ready(function(){
-                            
                 $('#cbOficina').on('change', function(){
                     $("#cbHorarios").empty();
                     $('#fechaPicker' ).datepicker( "destroy" );
                     let value = $('#cbLocalidad').val();
                     if(value){
-                        _dialog_turno = $.dialog({
-                            title: 'Obteniendo horarios...',
-                            content: 'Este proceso puede demorar unos segundos',
-                            closeIcon: false,
-                            theme: 'material'
-                        });
+                        
                         buscarDisponibilidad();
-                        if(_dialog_turno != null){
-                            _dialog_turno.close();
-                        }
+                        
                     }
                 });
                // $('#cbOficina').change();
