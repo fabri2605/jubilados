@@ -116,6 +116,8 @@
             return 'Jueves';
         }else if($nro == 5){
             return 'Viernes';
+        }else if($nro == 6){
+            return 'Sábado';
         }
     }    
 @endphp
