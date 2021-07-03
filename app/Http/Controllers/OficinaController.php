@@ -76,7 +76,7 @@ class OficinaController extends Controller
         $agenda = OficinaAgenda::where('oficina_id', '=', $oficina->id)->first();
 
         if(!empty($agenda)){
-            for($i = 1; $i <=5; $i++){
+            for($i = 1; $i <=6; $i++){
                 $dia = OficinaAgendaDetalle::where('dia_semana','=', $i)->where('oficina_agenda_id', '=', $agenda->id)->first();
                 if(!empty($dia)){
                     if($request->get('llegada')[($i-1)] == 1){
