@@ -337,7 +337,7 @@ class SitioController extends Controller
             foreach($period as $date){
                 if($date->gte($today)){
                     //verifico dia habil
-                    if($date->dayOfWeek != Carbon::SUNDAY && $date->dayOfWeek != Carbon::SATURDAY){
+                    if($date->dayOfWeek != Carbon::SUNDAY ){
                         $rangos->push($date->format('Y-m-d'));
                     }
                 }

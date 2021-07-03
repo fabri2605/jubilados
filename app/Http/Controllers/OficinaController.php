@@ -51,7 +51,7 @@ class OficinaController extends Controller
         $agenda->activa = 1;
         $agenda->save();
 
-        for($i = 1; $i <=5; $i++){
+        for($i = 1; $i <=6; $i++){
             $dia = (new OficinaAgendaDetalle);
             $dia->dia_semana = $i;
             $dia->oficina_agenda_id = $agenda->id;
