@@ -106,6 +106,7 @@
                                                 <label for="Documento "> Celular</label>
                                                 <input type="number" class="form-control" id="txtCelular" name="telefono" value="{{old('telefono')}}" >
                                             </div>
+                                            <div class="col-md-12" id="loading"></div>
                                             <div class="form-group col-md-12" >
                                                 <h3 class="main_question"><strong></strong>Día :</h3>
                                                 <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-06-01">
