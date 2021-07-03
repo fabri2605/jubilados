@@ -185,7 +185,7 @@
        <script>
            var map;
            var oficina_actual = null;
-           var _dialog_turno  = null;
+            _dialog_turno  = null;
            
            $(document).ready(function(){
                             
@@ -201,6 +201,9 @@
                             theme: 'material'
                         });
                         buscarDisponibilidad();
+                        if(_dialog_turno != null){
+                            _dialog_turno.close();
+                        }
                     }
                 });
                // $('#cbOficina').change();
