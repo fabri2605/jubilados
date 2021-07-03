@@ -83,6 +83,12 @@
                                                     <label for="Nombre ">* Oficina</label>
                                                     <select name="oficina_id" class="form-control select2 custom-select" id="cbOficina" required>
                                                     </select>
+                                                    <button type="button" id="btnMapa" class="btn btn-primary" >
+                                                        Ver ubicación
+                                                    </button>
+                                                    <button type="button" style="display: none" id="btnOpen" data-toggle="modal" data-target="#modalMap">
+                                                        abrirModal
+                                                    </button>
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="Nombre ">* Nombre</label>
