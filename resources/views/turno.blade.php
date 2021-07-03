@@ -18,6 +18,19 @@
             width: 100%;
             height: 500px;
         }
+        @media screen and (min-width: 0px) and (max-width: 480px){
+            .calendarPicker{
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+        @media screen and (min-width: 481px) and (max-width: 768px){
+            .calendarPicker{
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+
     </style>
     <body>
        <header class="sube-header">
@@ -57,16 +70,7 @@
                                                 <label for="Nombre ">* Localidad</label>
                                                 <select name="localidad" class="form-control select2 custom-select" id="cbLocalidad" >
                                                         <option value=""></option>
-                                                        <option value="Gran Mendoza"
-                                                            @if(old('localidad') == "Gran Mendoza")
-                                                                selected
-                                                            @endif
-                                                            >Gran Mendoza</option>
-                                                        <option value="San Rafael"
-                                                            @if(old('localidad') == "San Rafael")
-                                                                selected
-                                                            @endif
-                                                            >San Rafael</option>
+                                                        <option value="San Rafael" selected>San Rafael</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">
@@ -99,7 +103,7 @@
                                             <div class="form-group col-md-12" >
                                                 <h3 class="main_question"><strong></strong>Día :</h3>
                                                 <input type="hidden" id="fechaTurno" name="fechaTurno" value="2021-06-01">
-                                                <div class="form-group fecha-solicitud" style="width: 60%;margin: 0 auto;">
+                                                <div class="form-group fecha-solicitud calendarPicker">
                                                     <div id="fechaPicker"></div>
                                                     <hr>
                                                     <p class="leyenda">
@@ -299,7 +303,10 @@
                 $("#btnUpdate").on('click', function(){
                     $('#dfFecha').change();
                 });
+
+                $('#cbLocalidad').trigger("change");
            });
+
            function initMap() {
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: -32.886333, lng: -68.8400085},
