@@ -47,6 +47,7 @@ Route::group(['prefix' => 'solicitudes'], function () {
 
 Route::group(['prefix' => 'solicitudes_san_rafael'], function () {
     Route::delete('/eliminar/{data}', 'SolicitudSanRafaelController@destroy')->name('solicitudes_san_rafael.eliminar');
+    Route::post('/generar/reporte/', 'SolicitudSanRafaelController@reporte')->name('solicitudes_san_rafael.reporte');
 });  
 
 Route::group(['prefix' => 'enviados'], function () {
