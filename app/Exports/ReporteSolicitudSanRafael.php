@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Solicitud;
+use App\SolicitudSanRafael;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
@@ -51,7 +51,7 @@ class ReporteSolicitudSanRafael implements FromCollection,WithHeadings,ShouldAut
     }
     public function collection()
     {
-        $solicitudes = Solicitud::whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
+        $solicitudes = SolicitudSanRafael::whereDate('fecha_solicitud', '<=', $this->fecha_hasta->toDateString())
                         ->whereDate('fecha_solicitud', '>=', $this->fecha_desde->toDateString())->get();
 
         //dd($solicitudes);
