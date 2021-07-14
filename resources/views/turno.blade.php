@@ -188,7 +188,7 @@
        <script src="/js/select2.min.js"></script>
        <script type="text/javascript" src="/js/front/horarios.min.js?v=40"></script>
        <script type="text/javascript" src="/libs/jquery-ui.min.js"></script>
-       <script src="https://maps.googleapis.com/maps/api/js?key=xxx&callback=initMap" async defer></script>
+       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl3oO_Wj-tdmSKVwPVM6FoRouI-dupG1s&callback=initMap" async defer></script>
        <script>
            var map;
            var oficina_actual = null;
