@@ -269,7 +269,7 @@
                 $('#btnMapa').on('click', function(){
                     let value = $('#cbOficina').val();
                     if(value){
-                        let url = '/api/oficinas/obtener/coordenadas/'+value;
+                        let url = '/sitio/oficinas/obtener/coordenadas/'+value;
                         $.ajax( url )
                         .done(function(data) {
                             var myLatLng = {lat: Number(data.lat), lng: Number(data.lng)};
