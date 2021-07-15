@@ -548,4 +548,8 @@ class SitioController extends Controller
             return redirect()->route('turno')->withInput($request->all());
         }
     }
+
+    public function oficinaXId($id){
+        return Oficina::select('lat','lng','denominacion','id')->where('id','=', $id)->first();
+    }
 }
