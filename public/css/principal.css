@@ -8,15 +8,36 @@
 
 body{
   font-family: 'Roboto', sans-serif;
-  overflow: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-color: #F2F2F2;
 }
 
 header{
-  background-color: #37BBED;
+  background-color: #2c71b1;
   position: sticky;
   top: 0;
-  height: 50px;
+  height: 90px;
   width: 100%;
+}
+header img{
+  height: 90px;
+  margin-left: 20px;
+}
+
+footer{
+  background-color: #2c71b1;
+  min-height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer img{
+  height: 150px;
+  
 }
 
 main {
@@ -86,6 +107,7 @@ a{ text-decoration: none; color: #f4f4f4}
   margin-top: 3px;
   height: 130px;
 }
+
 
 .menu .card:nth-child(1) .item:nth-child(1){
    background-color: #4357AD;

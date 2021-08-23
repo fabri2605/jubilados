@@ -11,7 +11,9 @@
 </head>
 
 <body>
-    <header class="header"></header>
+    <header class="header">
+        <img src="/images/assets/logos/logo1.svg" class="img-fluid">
+    </header>
     <main>
         <div class="banner">
             <img src="/assets/images/2021/logo.png" class="logo">
@@ -38,7 +40,11 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <img src="/images/assets/logos/logo2.svg" class="img-fluid">
+        <img src="/images/assets/logos/logo3.svg" class="img-fluid">
+    </footer>
+
 
 </body>
 
