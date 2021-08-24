@@ -96,6 +96,16 @@
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                 ],
                 columnDefs: [
+                    {
+                        "targets": [ 1 ],
+                        "visible": true,
+                        "searchable": false
+                    },
+                    {
+                        "targets": [ 2 ],
+                        "visible": true,
+                        "searchable": false
+                    },
                 ],
                 drawCallback: function( settings ) {
                         console.log('dibujar ', settings.json.recordsFiltered);
