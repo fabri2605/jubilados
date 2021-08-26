@@ -39,6 +39,10 @@ footer img{
   height: 150px;
   
 }
+footer .imagen{
+  height: 100px;
+  margin: 20px;
+}
 
 main {
   background-color: #F2F2F2;

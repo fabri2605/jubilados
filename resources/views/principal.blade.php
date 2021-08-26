@@ -69,7 +69,7 @@
     </main>
     <footer>
         <img src="/images/assets/logos/logo2.svg" class="img-fluid">
-        <img src="/images/assets/logos/logo3.svg" class="img-fluid">
+        <img src="/images/assets/logos/logo3.svg" class="img-fluid imagen">
     </footer>
 
 </body>
