@@ -25,7 +25,7 @@
             <h4>Conocé todos los medios disponibles para conseguir tu tarjeta SUBE en Mendoza </h4>
         </div>
         <section class="menu">
-            <div class="card">
+            <!--<div class="card">
                 <div class="item">
                     <a href="{{route('particulares')}}">
                       <i class="far fa-credit-card"></i>
@@ -36,7 +36,7 @@
                     Si Ud. quiere gestionar un Abono con Tarjeta SUBE, solicite un turno en el lugar de su
                     convenciencia, haciendo click aqui
                 </p>
-            </div>
+            </div>!-->
             <!--<div class="card">
                 <div class="item">
                     <a href="{{route('retirala')}}"><i class="far fa-calendar-check"></i></a>

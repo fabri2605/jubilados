@@ -82,11 +82,13 @@ a{ text-decoration: none; color: #f4f4f4}
   justify-content: space-evenly;
 }
 .card {
-   width: 190px;
+   width: 220px;
    height: 300px;
    margin: 20px 0;
    display: flex;
+   gap: 6px;
    flex-direction: column;
+   text-align: center;
 }
 .item {
     align-self: center;

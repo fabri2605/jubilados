@@ -1,6 +1,13 @@
 <?php
 
+use App\Helpers\API\SubeAPI;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/subekey', function(){
+    $key = SubeAPI::getTarjetaAsociada(32504755);
+    return collect($key);
+});
 
 Auth::routes();
 Route::get('/', 'SitioController@landing')->name('inicio');
@@ -16,6 +23,7 @@ Route::get('/sanrafael', 'SitioController@sitioSanRafael')->name('home_san_rafae
 Route::get('/retira', 'SitioController@retirala')->name('retirala');
 Route::get('/home', 'HomeController@index')->name('menu');
 Route::get('/turno', 'SitioController@turno')->name('turno');
+Route::get('/abonos', 'SitioController@abonos')->name('abonos');
 
 Route::resource('users', 'UserController');
 Route::resource('solicitudes', 'SolicitudController');
