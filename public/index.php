@@ -1,5 +1,7 @@
 <?php
-
+$nuevaURL='https://mendotran.mendoza.gov.ar';
+header("Location:".$nuevaURL);
+die();
 /**
  * Laravel - A PHP Framework For Web Artisans
  *

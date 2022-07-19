@@ -8,8 +8,12 @@ Route::get('/subekey', function(){
     $key = SubeAPI::getTarjetaAsociada(32504755);
     return collect($key);
 });
+// $mendotra='https://mendotran.mendoza.gov.ar/';
+// Auth::routes();
+// Route::get('/', function() {
+//     return view('https://mendotran.mendoza.gov.ar');
+// })->name('inicio');
 
-Auth::routes();
 Route::get('/', 'SitioController@landing')->name('inicio');
 Route::get('/testing', 'SitioController@testing')->name('testing');
 Route::get('/waiting', 'SitioController@landingSR')->name('inicio_sanrafael');
