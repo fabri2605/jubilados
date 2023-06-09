@@ -45,7 +45,7 @@
 						<span>2</span>
 					</li>
 					<li class="multisteps-form__progress-btn">
-						<span>99</span>
+						<span>3</span>
 					</li>
 				</ul>
 			</div>
