@@ -45,7 +45,7 @@
 						<span>2</span>
 					</li>
 					<li class="multisteps-form__progress-btn">
-						<span>3</span>
+						<span>99</span>
 					</li>
 				</ul>
 			</div>
@@ -136,7 +136,6 @@
 											<span class="checkmark"></span>Femenino
 										</label>
 									</div>
-									
 								</div>
 							</div>
 						</div>
